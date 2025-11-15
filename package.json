@@ -1,0 +1,25 @@
+{
+  "name": "adzzat-landing-page",
+  "version": "1.0.0",
+  "description": "Adzzat landing page - MERN stack with 3D animations",
+  "main": "server/server.js",
+  "scripts": {
+    "client": "cd client && npm start",
+    "server": "cd server && npm run dev",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "install-all": "npm install && cd server && npm install && cd ../client && npm install",
+    "build": "cd client && npm run build"
+  },
+  "keywords": [
+    "react",
+    "express",
+    "mongodb",
+    "landing-page",
+    "mern"
+  ],
+  "author": "Adzzat",
+  "license": "ISC",
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}

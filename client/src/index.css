@@ -510,3 +510,55 @@ button {
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
+
+/* Clean Design - Section Titles Centered */
+.section-header-v2 {
+  text-align: center !important;
+  margin-bottom: 60px !important;
+}
+
+.section-title-v2 {
+  text-align: center !important;
+}
+
+.section-subtitle-v2 {
+  text-align: center !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+}
+
+/* Ensure Cards Have Proper Height */
+.glass-card,
+.expertise-card,
+.service-card-v2,
+.benefit-card,
+.metric-card,
+.timeline-step,
+.step-card {
+  min-height: fit-content !important;
+  height: auto !important;
+  overflow: visible !important;
+}
+
+/* Clean Card Padding */
+.glass-card,
+.expertise-card,
+.service-card-v2,
+.benefit-card {
+  padding: 32px !important;
+}
+
+/* Clean Spacing */
+section {
+  padding: 80px 0 !important;
+}
+
+/* Remove Excessive Effects for Clean Look */
+.glow-animate {
+  animation: none !important;
+}
+
+/* Simplified Transitions */
+* {
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease !important;
+}

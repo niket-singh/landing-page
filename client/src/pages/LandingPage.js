@@ -16,21 +16,8 @@ const LandingPage = () => {
       {/* Modern Glassmorphism Navbar */}
       <NavbarV2 />
 
-      {/* Hero Section - Bento Grid with Animations */}
+      {/* Hero Section - Clean & Simple */}
       <HeroV2 />
-
-      {/* Trusted By Section */}
-      <section className="trusted-by-v2">
-        <div className="container-v2">
-          <p className="trusted-label-v2">Trusted by 50+ innovative companies</p>
-          <div className="client-logos-v2">
-            <div className="logo-item-v2">
-              <span className="client-name">AfterQuery</span>
-              <span className="client-badge-v2">Active Partner</span>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* Services Section - Glass Cards */}
       <ServicesV2 />

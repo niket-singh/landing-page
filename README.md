@@ -73,6 +73,34 @@ Before you begin, ensure you have the following installed:
 
 ## Installation & Setup
 
+### Quick Setup (Recommended)
+
+We provide automated setup scripts for both Unix/Mac and Windows:
+
+**On macOS/Linux:**
+```bash
+git clone https://github.com/niket-singh/landing-page.git
+cd landing-page
+./setup.sh
+```
+
+**On Windows:**
+```bash
+git clone https://github.com/niket-singh/landing-page.git
+cd landing-page
+setup.bat
+```
+
+The setup script will:
+- Check Node.js and MongoDB installation
+- Create `.env` files from examples
+- Install all dependencies (root, server, and client)
+- Provide next steps
+
+### Manual Setup
+
+If you prefer manual setup:
+
 ### 1. Clone the Repository
 
 ```bash
@@ -80,23 +108,17 @@ git clone https://github.com/niket-singh/landing-page.git
 cd landing-page
 ```
 
-### 2. Install Backend Dependencies
+### 2. Create Environment Files
 
+**IMPORTANT:** Create `.env` files before installing dependencies.
+
+**Server (.env in server/ directory):**
 ```bash
 cd server
-npm install
+cp .env.example .env
 ```
 
-### 3. Install Frontend Dependencies
-
-```bash
-cd ../client
-npm install
-```
-
-### 4. Configure Environment Variables
-
-**Backend (.env in server/ directory):**
+Edit `server/.env`:
 ```env
 PORT=5000
 MONGODB_URI=mongodb://localhost:27017/adzzat
@@ -104,13 +126,33 @@ NODE_ENV=development
 FRONTEND_URL=http://localhost:3000
 ```
 
-**Frontend (.env in client/ directory):**
+**Client (.env in client/ directory):**
+```bash
+cd ../client
+cp .env.example .env
+```
+
+Edit `client/.env`:
 ```env
 REACT_APP_API_URL=http://localhost:5000/api
 REACT_APP_SITE_NAME=Adzzat
 ```
 
-### 5. Start MongoDB
+### 3. Install Dependencies
+
+```bash
+# From project root
+npm install          # Install root dependencies
+cd server && npm install && cd ..
+cd client && npm install && cd ..
+```
+
+Or use the convenience script:
+```bash
+npm run install-all
+```
+
+### 4. Start MongoDB
 
 Ensure MongoDB is running on your system:
 
@@ -123,11 +165,13 @@ sudo systemctl start mongod
 
 # On Windows
 net start MongoDB
+# Or use MongoDB Compass
 ```
 
 Verify MongoDB is running:
 ```bash
 mongosh
+# Should connect successfully
 ```
 
 ## Running the Application
@@ -300,25 +344,123 @@ Located in `client/src/hooks/`:
 
 ## Troubleshooting
 
+### Error: Could not find a required file - index.html
+
+**Error Message:**
+```
+Could not find a required file.
+  Name: index.html
+  Searched in: C:\Users\...\landing-page\client\public
+```
+
+**Solution:**
+This happens if you cloned before the file was pushed. Pull the latest changes:
+```bash
+git pull origin claude/adzzat-landing-page-01HbfNVcgJnXp9FPHWBaec3v
+```
+
+Or manually create `client/public/index.html` with the content from the repository.
+
+### Error: MongoDB URI is undefined
+
+**Error Message:**
+```
+Error: The `uri` parameter to `openUri()` must be a string, got "undefined"
+```
+
+**Solution:**
+The `.env` file is missing in the server directory.
+
+**Fix:**
+```bash
+cd server
+cp .env.example .env
+```
+
+Then edit `server/.env` and ensure it contains:
+```env
+PORT=5000
+MONGODB_URI=mongodb://localhost:27017/adzzat
+NODE_ENV=development
+FRONTEND_URL=http://localhost:3000
+```
+
+**Why this happens:** `.env` files are not tracked by git (for security), so you must create them locally.
+
+### MongoDB Connection Failed
+
+**Error Message:**
+```
+MongoServerError: connect ECONNREFUSED 127.0.0.1:27017
+```
+
+**Solutions:**
+
+1. **MongoDB is not running:**
+   ```bash
+   # macOS
+   brew services start mongodb-community
+
+   # Linux
+   sudo systemctl start mongod
+
+   # Windows
+   net start MongoDB
+   ```
+
+2. **MongoDB not installed:**
+   - Download from: https://www.mongodb.com/try/download/community
+   - Or use MongoDB Atlas (cloud): https://www.mongodb.com/atlas
+
+3. **Use MongoDB Atlas (Cloud Database):**
+   ```env
+   # In server/.env
+   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/adzzat
+   ```
+
 ### Port Already in Use
 
 ```bash
-# Kill process on port 5000 (backend)
-lsof -ti:5000 | xargs kill -9
+# Windows
+netstat -ano | findstr :5000
+taskkill /PID <PID> /F
 
-# Kill process on port 3000 (frontend)
+netstat -ano | findstr :3000
+taskkill /PID <PID> /F
+
+# macOS/Linux
+lsof -ti:5000 | xargs kill -9
 lsof -ti:3000 | xargs kill -9
 ```
 
-### MongoDB Connection Error
+### Dependencies Installation Failed
 
-1. Ensure MongoDB is running
-2. Check MONGODB_URI in `.env`
-3. Try connecting via mongosh: `mongosh mongodb://localhost:27017`
+**Solution:**
+```bash
+# Clear npm cache
+npm cache clean --force
+
+# Delete all node_modules
+rm -rf node_modules client/node_modules server/node_modules
+
+# Reinstall
+npm run install-all
+```
 
 ### CORS Errors
 
-Ensure `FRONTEND_URL` in server `.env` matches your React app URL.
+Ensure `FRONTEND_URL` in server `.env` matches your React app URL:
+```env
+FRONTEND_URL=http://localhost:3000
+```
+
+### React Build Errors
+
+If you see missing dependencies:
+```bash
+cd client
+npm install --legacy-peer-deps
+```
 
 ## Performance Optimization
 

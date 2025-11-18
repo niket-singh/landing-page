@@ -6,6 +6,7 @@ import HowItWorksV2 from '../components/HowItWorksV2';
 import BenefitsV2 from '../components/BenefitsV2';
 import ExpertiseGridV2 from '../components/ExpertiseGridV2';
 import ImpactSectionV2 from '../components/ImpactSectionV2';
+import CollegeLogos from '../components/CollegeLogos';
 import FAQV2 from '../components/FAQV2';
 import Contact from '../components/Contact';
 import './LandingPage.css';
@@ -33,6 +34,9 @@ const LandingPage = () => {
 
       {/* Impact Section - Better Punchline + Talent Showcase */}
       <ImpactSectionV2 />
+
+      {/* College Logos - Infinite Scroll Bands */}
+      <CollegeLogos />
 
       {/* FAQ Section - Interactive Accordion */}
       <FAQV2 />

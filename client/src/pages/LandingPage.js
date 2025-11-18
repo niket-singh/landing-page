@@ -1,176 +1,102 @@
 import React from 'react';
-import Navbar from '../components/Navbar';
-import Hero from '../components/Hero';
-import Services from '../components/Services';
+import NavbarV2 from '../components/NavbarV2';
+import HeroV2 from '../components/HeroV2';
+import ServicesV2 from '../components/ServicesV2';
+import HowItWorksV2 from '../components/HowItWorksV2';
+import BenefitsV2 from '../components/BenefitsV2';
+import ExpertiseGridV2 from '../components/ExpertiseGridV2';
+import ImpactSectionV2 from '../components/ImpactSectionV2';
+import FAQV2 from '../components/FAQV2';
 import Contact from '../components/Contact';
 import './LandingPage.css';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      <Navbar />
-      <Hero />
-      
+      {/* Modern Glassmorphism Navbar */}
+      <NavbarV2 />
+
+      {/* Hero Section - Bento Grid with Animations */}
+      <HeroV2 />
+
       {/* Trusted By Section */}
-      <section className="trusted-by">
-        <div className="container">
-          <p className="trusted-label">Trusted by innovative companies</p>
-          <div className="client-logo">
-            <div className="logo-item">
+      <section className="trusted-by-v2">
+        <div className="container-v2">
+          <p className="trusted-label-v2">Trusted by 50+ innovative companies</p>
+          <div className="client-logos-v2">
+            <div className="logo-item-v2">
               <span className="client-name">AfterQuery</span>
-              <span className="client-badge">Active Partner</span>
+              <span className="client-badge-v2">Active Partner</span>
             </div>
           </div>
         </div>
       </section>
 
-      <Services />
-      
-      {/* How It Works */}
-      <section id="how-it-works" className="how-it-works">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">How Adzzat Works</h2>
-            <p className="section-subtitle">A seamless process from start to finish</p>
-          </div>
+      {/* Services Section - Glass Cards */}
+      <ServicesV2 />
 
-          <div className="process-timeline">
-            <div className="timeline-item">
-              <div className="timeline-number">01</div>
-              <div className="timeline-content">
-                <h3>Share Your Requirements</h3>
-                <p>Tell us about your project needs, whether it's talent acquisition, LLM evaluation, or dataset creation</p>
-              </div>
-            </div>
+      {/* How It Works - Timeline */}
+      <HowItWorksV2 />
 
-            <div className="timeline-item">
-              <div className="timeline-number">02</div>
-              <div className="timeline-content">
-                <h3>AI-Powered Matching</h3>
-                <p>Our intelligent system matches you with the perfect talent or creates a customized project plan</p>
-              </div>
-            </div>
+      {/* Benefits - For Talent */}
+      <BenefitsV2 />
 
-            <div className="timeline-item">
-              <div className="timeline-number">03</div>
-              <div className="timeline-content">
-                <h3>Rigorous Vetting</h3>
-                <p>Every candidate undergoes resume parsing, coding assessments, and AI-powered interviews</p>
-              </div>
-            </div>
+      {/* Expertise Grid - AI/ML Use Cases */}
+      <ExpertiseGridV2 />
 
-            <div className="timeline-item">
-              <div className="timeline-number">04</div>
-              <div className="timeline-content">
-                <h3>Deliver Excellence</h3>
-                <p>Get high-quality results with continuous support and quality assurance</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Impact Section - Better Punchline + Talent Showcase */}
+      <ImpactSectionV2 />
 
-      {/* Why Us */}
-      <section id="why-us" className="why-us">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-title">Why Choose Adzzat</h2>
-            <p className="section-subtitle">The best of talent marketplaces and AI services, unified</p>
-          </div>
+      {/* FAQ Section - Interactive Accordion */}
+      <FAQV2 />
 
-          <div className="features-grid">
-            <div className="feature-card">
-              <div className="feature-icon">🚀</div>
-              <h3>Proven Track Record</h3>
-              <p>Already delivering exceptional results for AfterQuery with thousands of completed tasks</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">🎯</div>
-              <h3>Best-in-Class Vetting</h3>
-              <p>Multi-stage AI-powered screening ensures only the top 1% of talent joins our network</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">⚡</div>
-              <h3>Enterprise Scale</h3>
-              <p>From startups to enterprises, we scale seamlessly to meet your needs</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">🔒</div>
-              <h3>Quality Guaranteed</h3>
-              <p>99.8% quality score with rigorous QA processes and continuous monitoring</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">💡</div>
-              <h3>Comprehensive Services</h3>
-              <p>Talent marketplace, LLM evals, and dataset work - all in one platform</p>
-            </div>
-
-            <div className="feature-card">
-              <div className="feature-icon">🌟</div>
-              <h3>Innovation First</h3>
-              <p>Using cutting-edge AI to match talent and evaluate models better than anyone else</p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA Section */}
-      <section className="cta-section">
-        <div className="container">
-          <div className="cta-content">
-            <div className="cta-text">
-              <h2>Ready to Transform Your AI Operations?</h2>
-              <p>Join innovative companies already leveraging Adzzat's comprehensive AI solutions</p>
-            </div>
-            <div className="cta-buttons">
-              <a href="#contact" className="btn-primary btn-large">
-                Get Started Today
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
+      {/* Contact Form */}
       <Contact />
 
       {/* Footer */}
-      <footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-brand">
-              <div className="logo">
-                <span className="logo-text">Adzzat</span>
+      <footer className="footer-v2">
+        <div className="container-v2">
+          <div className="footer-content-v2">
+            <div className="footer-brand-v2">
+              <div className="footer-logo-v2">
+                <span className="logo-text-v2">Adzzat</span>
               </div>
-              <p>Elite talent meets enterprise AI solutions</p>
+              <p className="footer-tagline">Exceptional Humans. Exceptional AI.</p>
+              <p className="footer-stat">500+ professionals building the future of AI</p>
             </div>
-            <div className="footer-links">
+            <div className="footer-links-v2">
               <div className="footer-column">
                 <h4>Services</h4>
                 <ul>
-                  <li><a href="#services">Talent Marketplace</a></li>
+                  <li><a href="#services">Hire Talent</a></li>
                   <li><a href="#services">LLM Evaluation</a></li>
-                  <li><a href="#services">Dataset Services</a></li>
+                  <li><a href="#services">Dataset Creation</a></li>
                 </ul>
               </div>
               <div className="footer-column">
-                <h4>Company</h4>
+                <h4>For Talent</h4>
                 <ul>
-                  <li><a href="#why-us">Why Adzzat</a></li>
-                  <li><a href="#how-it-works">How It Works</a></li>
+                  <li><a href="#benefits">Why Join</a></li>
+                  <li><a href="#how-it-works">Application Process</a></li>
+                  <li><a href="#benefits">Apply Now</a></li>
+                </ul>
+              </div>
+              <div className="footer-column">
+                <h4>Resources</h4>
+                <ul>
+                  <li><a href="#expertise">Expertise</a></li>
+                  <li><a href="#faq">FAQ</a></li>
                   <li><a href="#contact">Contact</a></li>
                 </ul>
               </div>
             </div>
           </div>
-          <div className="footer-bottom">
+          <div className="footer-bottom-v2">
             <p>&copy; 2024 Adzzat. All rights reserved.</p>
+            <div className="footer-links-bottom">
+              <a href="#privacy">Privacy Policy</a>
+              <a href="#terms">Terms of Service</a>
+            </div>
           </div>
         </div>
       </footer>

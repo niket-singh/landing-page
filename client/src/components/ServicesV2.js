@@ -6,6 +6,10 @@ const ServicesV2 = () => {
   const [ref1, isVisible1] = useIntersectionObserver();
   const [ref2, isVisible2] = useIntersectionObserver();
 
+  const scrollToContact = () => {
+    document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <section id="services" className="services-v2">
       <div className="container-v2">
@@ -83,8 +87,8 @@ const ServicesV2 = () => {
               </div>
             </div>
 
-            <button className="card-cta-v2">
-              <span>Hire Talent</span>
+            <button className="card-cta-v2" onClick={scrollToContact}>
+              <span>Contact Us</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -136,8 +140,8 @@ const ServicesV2 = () => {
               <span className="metric-text-v2">Accuracy Rate</span>
             </div>
 
-            <button className="card-cta-v2">
-              <span>Evaluate Models</span>
+            <button className="card-cta-v2" onClick={scrollToContact}>
+              <span>Contact Us</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -188,8 +192,8 @@ const ServicesV2 = () => {
               <span className="metric-text-v2">Data Points Labeled</span>
             </div>
 
-            <button className="card-cta-v2">
-              <span>Create Datasets</span>
+            <button className="card-cta-v2" onClick={scrollToContact}>
+              <span>Contact Us</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
               </svg>
@@ -234,8 +238,8 @@ const ServicesV2 = () => {
                     <span>Skill Growth</span>
                   </div>
                 </div>
-                <button className="card-cta-v2 cta-secondary">
-                  <span>Apply Now</span>
+                <button className="card-cta-v2 cta-secondary" onClick={scrollToContact}>
+                  <span>Contact Us</span>
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                     <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   </svg>
@@ -251,8 +255,8 @@ const ServicesV2 = () => {
             <h3>Need a custom solution?</h3>
             <p>Let's discuss how we can help your specific use case</p>
           </div>
-          <button className="btn-primary-v2">
-            <span>Schedule a Call</span>
+          <button className="btn-primary-v2" onClick={scrollToContact}>
+            <span>Contact Us</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
             </svg>

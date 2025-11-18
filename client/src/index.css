@@ -562,3 +562,158 @@ section {
 * {
   transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s ease !important;
 }
+
+/* ============================================
+   EXPANDABLE CARDS ON HOVER - CLEAN DESIGN
+   ============================================ */
+
+/* Make cards compact by default */
+.service-card-v2,
+.benefit-card,
+.expertise-card,
+.step-card {
+  height: auto !important;
+  min-height: 120px !important;
+  cursor: pointer !important;
+  overflow: hidden !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+/* Hide content by default - only show title */
+.service-card-v2 .card-description,
+.service-card-v2 .features-list-v2,
+.service-card-v2 .card-stats-v2,
+.service-card-v2 .perks-grid,
+.benefit-card p,
+.benefit-card .community-stats,
+.expertise-card p,
+.step-card .step-content p,
+.step-card .step-features {
+  max-height: 0 !important;
+  opacity: 0 !important;
+  overflow: hidden !important;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.3s ease,
+              margin 0.4s ease !important;
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+/* Show content on hover */
+.service-card-v2:hover .card-description,
+.service-card-v2:hover .features-list-v2,
+.service-card-v2:hover .card-stats-v2,
+.service-card-v2:hover .perks-grid,
+.benefit-card:hover p,
+.benefit-card:hover .community-stats,
+.expertise-card:hover p,
+.step-card:hover .step-content p,
+.step-card:hover .step-features {
+  max-height: 2000px !important;
+  opacity: 1 !important;
+  margin-top: 16px !important;
+  margin-bottom: 16px !important;
+}
+
+/* Expand card height on hover */
+.service-card-v2:hover,
+.benefit-card:hover,
+.expertise-card:hover,
+.step-card:hover {
+  min-height: auto !important;
+  transform: translateY(-8px) !important;
+  box-shadow: 0 20px 60px rgba(99, 102, 241, 0.2) !important;
+  z-index: 10 !important;
+}
+
+/* Keep titles always visible and prominent */
+.service-card-v2 h3,
+.benefit-card h3,
+.expertise-card h3,
+.step-card h3,
+.step-content h3 {
+  opacity: 1 !important;
+  margin-bottom: 0 !important;
+  transition: margin-bottom 0.3s ease !important;
+}
+
+.service-card-v2:hover h3,
+.benefit-card:hover h3,
+.expertise-card:hover h3,
+.step-card:hover h3,
+.step-card:hover .step-content h3 {
+  margin-bottom: 12px !important;
+}
+
+/* Add hover indicator */
+.service-card-v2::after,
+.benefit-card::after,
+.expertise-card::after,
+.step-card::after {
+  content: '⌄';
+  position: absolute;
+  bottom: 12px;
+  right: 20px;
+  font-size: 1.5rem;
+  color: #6366f1;
+  opacity: 0.3;
+  transition: all 0.3s ease;
+}
+
+.service-card-v2:hover::after,
+.benefit-card:hover::after,
+.expertise-card:hover::after,
+.step-card:hover::after {
+  content: '⌃';
+  opacity: 0.6;
+  bottom: 16px;
+}
+
+/* Timeline cards special handling */
+.timeline-step {
+  position: relative;
+}
+
+.timeline-step .step-card {
+  position: relative;
+}
+
+/* Expertise cards in grid - maintain grid layout */
+.expertise-grid {
+  align-items: start !important;
+}
+
+/* Service cards grid spacing */
+.services-grid-v2 {
+  align-items: start !important;
+}
+
+/* Benefits grid spacing */
+.benefits-grid {
+  align-items: start !important;
+}
+
+/* Smooth icon transitions */
+.service-icon-v2,
+.benefit-icon,
+.expertise-icon,
+.step-icon {
+  transition: transform 0.3s ease !important;
+}
+
+.service-card-v2:hover .service-icon-v2,
+.benefit-card:hover .benefit-icon,
+.expertise-card:hover .expertise-icon,
+.step-card:hover .step-icon {
+  transform: scale(1.1) rotate(5deg) !important;
+}
+
+/* Wide/Large cards handling */
+.service-card-v2.wide-card,
+.benefit-card.wide-card {
+  min-height: 140px !important;
+}
+
+.service-card-v2.large-card {
+  min-height: 160px !important;
+}

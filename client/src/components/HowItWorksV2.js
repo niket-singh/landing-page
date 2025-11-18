@@ -2,6 +2,10 @@ import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import './HowItWorksV2.css';
 
+const scrollToContact = () => {
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+};
+
 const HowItWorksV2 = () => {
   const [ref, isVisible] = useIntersectionObserver();
 
@@ -129,7 +133,7 @@ const HowItWorksV2 = () => {
             <h3>Ready to Get Started?</h3>
             <p>Join 500+ professionals already working on cutting-edge AI projects</p>
           </div>
-          <button className="btn-primary-v2 btn-large">
+          <button className="btn-primary-v2 btn-large" onClick={scrollToContact}>
             <span>Start Application</span>
             <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
               <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

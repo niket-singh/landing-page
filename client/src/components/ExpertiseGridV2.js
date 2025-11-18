@@ -2,6 +2,10 @@ import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import './ExpertiseGridV2.css';
 
+const scrollToContact = () => {
+  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+};
+
 const ExpertiseGridV2 = () => {
   const [ref, isVisible] = useIntersectionObserver();
 
@@ -206,7 +210,7 @@ const ExpertiseGridV2 = () => {
               <h3>Don't see your use case?</h3>
               <p>We specialize in custom AI workflows. Schedule a call to discuss your unique requirements.</p>
             </div>
-            <button className="btn-secondary-v2">
+            <button className="btn-secondary-v2" onClick={scrollToContact}>
               <span>Schedule a Call</span>
               <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                 <path d="M6 12L10 8L6 4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>

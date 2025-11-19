@@ -30,38 +30,36 @@ const LandingPage = () => {
       {/* 2. Stats Section - Animated Counters (Soul AI Style) */}
       <StatsSection />
 
-      {/* 3. Our Services - Blue Background */}
-      <div id="services" className="section-blue">
+      {/* 3. Our Services */}
+      <div id="services">
         <ServicesV2 />
       </div>
 
-      {/* 4. How to Join (Mapped to HowItWorks) - White Background */}
-      <div id="how-it-works" className="section-white">
+      {/* 4. How to Join (Mapped to HowItWorks) - BLUE BACKGROUND */}
+      <div id="how-it-works" className="section-blue">
         <HowItWorksV2 />
       </div>
 
-      {/* 5. Why to Choose (Mapped to Benefits) - Blue Background */}
-      <div id="benefits" className="section-blue">
+      {/* 5. Why to Choose (Mapped to Benefits) */}
+      <div id="benefits">
         <BenefitsV2 />
       </div>
 
-      {/* 6. Deep Expertise in AI/ML Use Cases (Deccan AI Inspired) */}
-      <div id="expertise">
+      {/* 6. Deep Expertise in AI/ML Use Cases - BLUE BACKGROUND */}
+      <div id="expertise" className="section-blue">
         <UseCasesSection />
       </div>
 
-      {/* 7. Experts from Top Colleges (Soul AI) - Blue Background */}
-      <div className="section-blue">
-        <CollegeLogosSoulAI />
-      </div>
+      {/* 7. Experts from Top Colleges (Soul AI) */}
+      <CollegeLogosSoulAI />
 
-      {/* 8. FAQ Section - White Background */}
-      <div id="faq" className="section-white">
+      {/* 8. FAQ Section - BLUE BACKGROUND */}
+      <div id="faq" className="section-blue">
         <FAQV2 />
       </div>
 
-      {/* 9. Contact - Blue Background */}
-      <div id="contact" className="section-blue">
+      {/* 9. Contact */}
+      <div id="contact">
         <Contact />
       </div>
 

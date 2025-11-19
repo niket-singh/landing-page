@@ -1,10 +1,6 @@
 /* ============================================
    ADZZAT - MAIN STYLES
-   FUTURISTIC 2099 THEME
    ============================================ */
 
-/* Import Futuristic 2099 Theme - Next Generation Effects */
-@import url('./styles/FUTURISTIC_2099.css');
-
-/* Import Component-Specific Styles (already have their own CSS files) */
-/* These are imported automatically by their respective components */
+/* Master theme styles are imported in LandingPage.js */
+/* Component-Specific Styles are imported automatically by their respective components */

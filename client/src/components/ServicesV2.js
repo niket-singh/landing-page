@@ -21,7 +21,7 @@ const ServicesV2 = () => {
           </div>
           <h2 className="section-title-v2">
             Everything You Need to
-            <span className="gradient-text-v2"> Build AI Products</span>
+            <div className="gradient-text-v2"> Build AI Products</div>
           </h2>
           <p className="section-subtitle-v2">
             From talent acquisition to model evaluation, we provide end-to-end AI solutions
@@ -35,9 +35,9 @@ const ServicesV2 = () => {
           <div ref={ref1} className={`service-card-v2 large-card ${isVisible1 ? 'visible' : ''}`}>
             <div className="card-glow-v2"></div>
             <div className="card-header-v2">
-              <div className="service-icon-v2 gradient-purple">
+              <div className="service-icon-v2">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <path d="M14 2L18 10L26 12L20 18L22 26L14 22L6 26L8 18L2 12L10 10L14 2Z" fill="white"/>
+                  <path d="M14 2L18 10L26 12L20 18L22 26L14 22L6 26L8 18L2 12L10 10L14 2Z" fill="#0A1538"/>
                 </svg>
               </div>
               <div>
@@ -99,10 +99,10 @@ const ServicesV2 = () => {
           <div className={`service-card-v2 medium-card ${isVisible1 ? 'visible' : ''}`}>
             <div className="card-glow-v2"></div>
             <div className="card-header-v2">
-              <div className="service-icon-v2 gradient-pink">
+              <div className="service-icon-v2">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <rect x="4" y="4" width="20" height="20" rx="4" stroke="white" strokeWidth="2"/>
-                  <path d="M9 14L12 17L19 10" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <rect x="4" y="4" width="20" height="20" rx="4" stroke="#0A1538" strokeWidth="2"/>
+                  <path d="M9 14L12 17L19 10" stroke="#0A1538" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
               </div>
               <div>
@@ -152,9 +152,9 @@ const ServicesV2 = () => {
           <div className={`service-card-v2 medium-card ${isVisible1 ? 'visible' : ''}`}>
             <div className="card-glow-v2"></div>
             <div className="card-header-v2">
-              <div className="service-icon-v2 gradient-blue">
+              <div className="service-icon-v2">
                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                  <path d="M4 7H24M4 14H24M4 21H24" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                  <path d="M4 7H24M4 14H24M4 21H24" stroke="#0A1538" strokeWidth="2" strokeLinecap="round"/>
                 </svg>
               </div>
               <div>
@@ -205,10 +205,10 @@ const ServicesV2 = () => {
             <div className="card-glow-v2"></div>
             <div className="wide-card-content">
               <div className="wide-card-left">
-                <div className="service-icon-v2 gradient-green">
+                <div className="service-icon-v2">
                   <svg width="28" height="28" viewBox="0 0 28 28" fill="none">
-                    <circle cx="14" cy="9" r="4" stroke="white" strokeWidth="2"/>
-                    <path d="M7 23C7 19 10 16 14 16C18 16 21 19 21 23" stroke="white" strokeWidth="2" strokeLinecap="round"/>
+                    <circle cx="14" cy="9" r="4" stroke="#0A1538" strokeWidth="2"/>
+                    <path d="M7 23C7 19 10 16 14 16C18 16 21 19 21 23" stroke="#0A1538" strokeWidth="2" strokeLinecap="round"/>
                   </svg>
                 </div>
                 <div>

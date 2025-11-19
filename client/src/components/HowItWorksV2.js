@@ -86,7 +86,7 @@ const HowItWorksV2 = () => {
           </div>
           <h2 className="section-title-v2">
             How to Join
-            <span className="gradient-text-v2"> Adzzat</span>
+            <div className="gradient-text-v2"> Adzzat</div>
           </h2>
           <p className="section-subtitle-v2">
             A simple, transparent process to join India's top AI workforce.
@@ -105,7 +105,7 @@ const HowItWorksV2 = () => {
               </div>
 
               <div className="step-card glass-card">
-                <div className="step-icon gradient-purple">
+                <div className="step-icon">
                   {step.icon}
                 </div>
 

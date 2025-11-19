@@ -47,7 +47,7 @@
 }
 
 .gradient-text-v2 {
-  background: linear-gradient(135deg, #6366f1 0%, #ec4899 50%, #8b5cf6 100%);
+  background: linear-gradient(135deg, #0A1538 0%, #1d4ed8 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -114,7 +114,6 @@
   width: 72px;
   height: 72px;
   border-radius: 20px;
-  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -128,17 +127,14 @@
 }
 
 .timeline-step:nth-child(2) .step-number-badge {
-  background: linear-gradient(135deg, #ec4899 0%, #f97316 100%);
   box-shadow: 0 12px 32px rgba(236, 72, 153, 0.3);
 }
 
 .timeline-step:nth-child(3) .step-number-badge {
-  background: linear-gradient(135deg, #3b82f6 0%, #06b6d4 100%);
   box-shadow: 0 12px 32px rgba(59, 130, 246, 0.3);
 }
 
 .timeline-step:nth-child(4) .step-number-badge {
-  background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
   box-shadow: 0 12px 32px rgba(16, 185, 129, 0.3);
 }
 

@@ -1,13 +1,14 @@
 /* ============================================
-   SECTION BACKGROUNDS - Zig-Zag Alternating
+   SECTION BACKGROUNDS - Blue Sections Match Hero
    ============================================ */
 
-/* Blue Section - Dark Navy Background */
+/* Blue Section - Dark Navy Background (matches Hero exactly) */
 .section-blue {
   background: linear-gradient(135deg, #0A1538 0%, #1A2C5A 100%);
   color: #FFFFFF;
   position: relative;
   overflow: hidden;
+  padding: var(--spacing-xl, 6rem) 0;
 }
 
 .section-blue h2,
@@ -20,64 +21,35 @@
   color: rgba(255, 255, 255, 0.9);
 }
 
-/* White Section - Clean White Background */
-.section-white {
-  background: #FFFFFF;
-  color: #1B1F23;
-}
-
-.section-white h2,
-.section-white h3,
-.section-white h4 {
-  color: #0A1538;
-}
-
-.section-white p {
-  color: #555555;
-}
-
-/* Blob decorations for blue sections */
+/* Animated blob background - same as Hero */
 .section-blue::before {
   content: '';
   position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 50%;
-  height: 50%;
-  background: radial-gradient(circle at center, rgba(26, 44, 90, 0.4) 0%, transparent 70%);
+  top: -25%;
+  left: 50%;
+  width: 140%;
+  height: 140%;
+  max-width: 1400px;
+  max-height: 1400px;
+  background: radial-gradient(circle at center, #0A1538 0%, #1A2C5A 100%);
+  border-radius: 50%;
+  filter: blur(150px);
+  transform: translateX(-50%) scale(1);
+  animation: blobMove-section 20s infinite alternate ease-in-out;
+  z-index: 0;
   opacity: 0.6;
   pointer-events: none;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: blobFloat 15s infinite alternate ease-in-out;
-  z-index: 0;
 }
 
-.section-blue::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  left: -5%;
-  width: 50%;
-  height: 50%;
-  background: radial-gradient(circle at center, rgba(26, 44, 90, 0.3) 0%, transparent 70%);
-  opacity: 0.6;
-  pointer-events: none;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: blobFloat 12s infinite alternate-reverse ease-in-out;
-  z-index: 0;
-}
-
-@keyframes blobFloat {
+@keyframes blobMove-section {
   0% {
-    transform: translate(0, 0) scale(1);
+    transform: translateX(-50%) scale(1);
   }
   50% {
-    transform: translate(20px, -20px) scale(1.1);
+    transform: translateX(-40%) scale(1.1);
   }
   100% {
-    transform: translate(-20px, 20px) scale(0.95);
+    transform: translateX(-60%) scale(1);
   }
 }
 
@@ -89,8 +61,8 @@
 
 /* Accessibility - Reduced Motion */
 @media (prefers-reduced-motion: reduce) {
-  .section-blue::before,
-  .section-blue::after {
+  .section-blue::before {
     animation: none;
+    transform: translateX(-50%);
   }
 }

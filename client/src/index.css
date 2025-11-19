@@ -1,6 +1,12 @@
 /* Import Premium Backgrounds */
 @import './styles/premium-backgrounds.css';
 
+/* Import Enhanced Animations */
+@import './styles/adzzat-enhanced-animations.css';
+
+/* Import White & Blue Theme (Optional - can toggle between themes) */
+/* @import './styles/theme-white-blue.css'; */
+
 /* Reset and Base Styles */
 * {
   margin: 0;

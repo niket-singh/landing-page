@@ -9,11 +9,15 @@ import ImpactSectionV2 from '../components/ImpactSectionV2';
 import CollegeLogos from '../components/CollegeLogos';
 import FAQV2 from '../components/FAQV2';
 import Contact from '../components/Contact';
+import FloatingOrbs from '../components/FloatingOrbs';
 import './LandingPage.css';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
+      {/* Premium Floating Orbs Background */}
+      <FloatingOrbs />
+
       {/* Modern Glassmorphism Navbar */}
       <NavbarV2 />
 

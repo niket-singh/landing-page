@@ -1,3 +1,6 @@
+/* Import Premium Backgrounds */
+@import './styles/premium-backgrounds.css';
+
 /* Reset and Base Styles */
 * {
   margin: 0;

@@ -5,9 +5,18 @@
 
 .how-it-works-v2 {
   padding: 120px 0;
-  background: linear-gradient(135deg, #f8f9ff 0%, #ffffff 50%, #fff5f7 100%);
+  background: linear-gradient(180deg, #0f1d4e 0%, #0b1636 100%);
   position: relative;
   overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Container to center content */
+.container-v2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 /* Section Header */
@@ -31,6 +40,8 @@
   color: #6366f1;
   margin-bottom: 20px;
   box-shadow: 0 4px 16px rgba(99, 102, 241, 0.1);
+  position: relative;
+  z-index: 3;
 }
 
 .badge-icon {
@@ -67,6 +78,8 @@
   max-width: 900px;
   margin: 0 auto;
   position: relative;
+  min-height: 320px;
+  padding: 4rem 0;
   opacity: 0;
   transform: translateY(30px);
   transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
@@ -157,6 +170,7 @@
   transition: all 0.3s ease;
   position: relative;
   overflow: hidden;
+  z-index: 2;
 }
 
 .step-card::before {

@@ -1,105 +1,115 @@
-# Adzzat Landing Page - MERN Stack
+# Adzzat Landing Page
 
-A stunning, modern landing page for Adzzat built with the MERN stack (MongoDB, Express.js, React, Node.js), featuring 3D animations, interactive elements, and enterprise-grade design.
+A stunning, modern landing page for Adzzat built with the MERN stack (MongoDB, Express.js, React, Node.js), featuring Soul AI-inspired design, premium animations, and enterprise-grade UI.
 
-## Features
+## 🎨 Design Features
 
-### Design Highlights
-- **3D Particle System**: Interactive hero section with animated particles that respond to mouse movement
-- **Smooth Animations**: Floating cards, rotating rings, and scroll-triggered animations
-- **Gradient Effects**: Modern gradient text and button styles inspired by top-tier platforms
-- **Responsive Design**: Fully responsive across all devices (desktop, tablet, mobile)
-- **Dark Theme**: Professional dark mode design with carefully selected color palette
-- **Full-Stack Integration**: Contact form connected to MongoDB database
+### Premium Visual Experience
+- **White & Blue Theme**: Clean, minimal, professional design inspired by Soul AI
+- **Floating Orbs**: 11 GPU-accelerated animated gradient orbs for depth
+- **Enhanced Animations**: 20+ premium animation effects (magnetic, liquid blobs, morphing gradients)
+- **HeroWhiteBlue Component**: Modern hero with blue gradient blobs and grid pattern
+- **College Logos Marquee**: Dual-layer infinite scrolling (Soul AI style)
+- **Glassmorphism Effects**: Blur(30px) + saturate(180%) for modern depth
+- **Expandable Cards**: Hover to reveal content for cleaner UI
+- **Responsive Design**: Fully optimized for desktop, tablet, and mobile
 
-### Tech Stack
+### UI Components (V2)
+- ✅ Clean centered hero section with animated stats counter
+- ✅ Glass-morphism service cards with shimmer effects
+- ✅ Interactive timeline for "How It Works"
+- ✅ Benefits section with expandable cards
+- ✅ Expertise grid showcasing AI/ML capabilities
+- ✅ Impact section with metrics
+- ✅ Infinite scrolling college logos (2 layers)
+- ✅ Interactive FAQ accordion
+- ✅ Full-stack contact form (MongoDB backend)
+
+## 🚀 Tech Stack
 
 **Frontend:**
 - React 18.2.0
-- Custom hooks for animations and scroll effects
+- Modern CSS3 (Animations, Gradients, Glassmorphism)
+- Custom hooks (useScrollAnimation, useParticles, useIntersectionObserver)
 - Axios for API calls
-- CSS3 with advanced animations
+- Soul AI & Deccan AI inspired design patterns
 
 **Backend:**
-- Node.js
-- Express.js 4.18.2
+- Node.js + Express.js 4.18.2
 - MongoDB with Mongoose 8.0.3
 - Express Validator for form validation
-- Helmet for security
+- Helmet for security headers
 - CORS enabled
 
-## Project Structure
+**Fonts:**
+- Inter (Soul AI style)
+- Space Grotesk (Creative, modern)
+- JetBrains Mono (Code blocks)
+
+## 📁 Project Structure
 
 ```
 landing-page/
-├── client/                 # React frontend
+├── client/                     # React frontend
 │   ├── public/
+│   │   ├── assets/
+│   │   │   ├── colleges/       # I1-I29 college logos
+│   │   │   └── images/         # Additional images
+│   │   └── index.html
 │   ├── src/
-│   │   ├── components/    # React components
-│   │   │   ├── Navbar.js
-│   │   │   ├── Hero.js
-│   │   │   ├── Services.js
-│   │   │   └── Contact.js
-│   │   ├── hooks/         # Custom React hooks
+│   │   ├── components/         # React components
+│   │   │   ├── NavbarV2.js
+│   │   │   ├── HeroV2.js       # Premium purple theme
+│   │   │   ├── HeroWhiteBlue.js # Clean blue theme (active)
+│   │   │   ├── ServicesV2.js
+│   │   │   ├── HowItWorksV2.js
+│   │   │   ├── BenefitsV2.js
+│   │   │   ├── ExpertiseGridV2.js
+│   │   │   ├── ImpactSectionV2.js
+│   │   │   ├── CollegeLogos.js
+│   │   │   ├── CollegeLogosSoulAI.js # Soul AI style (active)
+│   │   │   ├── FAQV2.js
+│   │   │   ├── Contact.js
+│   │   │   └── FloatingOrbs.js
+│   │   ├── hooks/              # Custom React hooks
 │   │   │   ├── useParticles.js
+│   │   │   ├── useScrollAnimation.js
 │   │   │   └── useIntersectionObserver.js
 │   │   ├── pages/
 │   │   │   └── LandingPage.js
+│   │   ├── styles/             # Global CSS
+│   │   │   ├── premium-backgrounds.css
+│   │   │   ├── adzzat-enhanced-animations.css
+│   │   │   └── theme-white-blue.css
+│   │   ├── index.css
 │   │   ├── App.js
 │   │   └── index.js
 │   ├── package.json
 │   └── .env
 │
-├── server/                # Node.js backend
+├── server/                     # Node.js backend
 │   ├── config/
-│   │   └── db.js         # MongoDB connection
+│   │   └── db.js              # MongoDB connection
 │   ├── models/
-│   │   └── Contact.js    # Contact schema
+│   │   └── Contact.js         # Contact schema
 │   ├── routes/
-│   │   └── contact.js    # Contact API routes
+│   │   └── contact.js         # Contact API routes
 │   ├── server.js
 │   ├── package.json
 │   └── .env
 │
+├── package.json               # Root package.json
+├── LICENSE
 └── README.md
 ```
 
-## Prerequisites
+## 🛠️ Prerequisites
 
-Before you begin, ensure you have the following installed:
 - **Node.js** (v16 or higher) - [Download](https://nodejs.org/)
 - **MongoDB** (v5 or higher) - [Download](https://www.mongodb.com/try/download/community)
 - **npm** or **yarn**
 
-## Installation & Setup
-
-### Quick Setup (Recommended)
-
-We provide automated setup scripts for both Unix/Mac and Windows:
-
-**On macOS/Linux:**
-```bash
-git clone https://github.com/niket-singh/landing-page.git
-cd landing-page
-./setup.sh
-```
-
-**On Windows:**
-```bash
-git clone https://github.com/niket-singh/landing-page.git
-cd landing-page
-setup.bat
-```
-
-The setup script will:
-- Check Node.js and MongoDB installation
-- Create `.env` files from examples
-- Install all dependencies (root, server, and client)
-- Provide next steps
-
-### Manual Setup
-
-If you prefer manual setup:
+## 📦 Installation & Setup
 
 ### 1. Clone the Repository
 
@@ -109,8 +119,6 @@ cd landing-page
 ```
 
 ### 2. Create Environment Files
-
-**IMPORTANT:** Create `.env` files before installing dependencies.
 
 **Server (.env in server/ directory):**
 ```bash
@@ -141,31 +149,28 @@ REACT_APP_SITE_NAME=Adzzat
 ### 3. Install Dependencies
 
 ```bash
-# From project root
-npm install          # Install root dependencies
-cd server && npm install && cd ..
-cd client && npm install && cd ..
-```
+# Install backend dependencies
+cd server
+npm install
 
-Or use the convenience script:
-```bash
-npm run install-all
+# Install frontend dependencies
+cd ../client
+npm install
 ```
 
 ### 4. Start MongoDB
 
-Ensure MongoDB is running on your system:
+Ensure MongoDB is running:
 
 ```bash
-# On macOS (using Homebrew)
+# macOS (using Homebrew)
 brew services start mongodb-community
 
-# On Linux
+# Linux
 sudo systemctl start mongod
 
-# On Windows
+# Windows
 net start MongoDB
-# Or use MongoDB Compass
 ```
 
 Verify MongoDB is running:
@@ -174,9 +179,9 @@ mongosh
 # Should connect successfully
 ```
 
-## Running the Application
+## 🚀 Running the Application
 
-You'll need two terminal windows/tabs:
+You'll need **two terminal windows**:
 
 ### Terminal 1: Start Backend Server
 
@@ -185,24 +190,59 @@ cd server
 npm run dev
 ```
 
-The backend will run on `http://localhost:5000`
+The backend runs on `http://localhost:5000`
 
-You should see:
+Expected output:
 ```
 Server running in development mode on port 5000
 MongoDB Connected: localhost
 ```
 
-### Terminal 2: Start Frontend Development Server
+### Terminal 2: Start Frontend
 
 ```bash
 cd client
 npm start
 ```
 
-The frontend will run on `http://localhost:3000` and automatically open in your browser.
+The frontend runs on `http://localhost:3000` and opens automatically in your browser.
 
-## API Endpoints
+## 🎨 Theme Customization
+
+### Toggle Between Hero Themes
+
+In `client/src/pages/LandingPage.js`:
+
+```javascript
+// Option 1: Clean White & Blue (Soul AI style) - ACTIVE
+<HeroWhiteBlue />
+
+// Option 2: Premium Purple with Orbs
+// <HeroV2 />
+```
+
+### Toggle College Logos Style
+
+In `client/src/pages/LandingPage.js`:
+
+```javascript
+// Option 1: Soul AI Minimalist Style - ACTIVE
+<CollegeLogosSoulAI />
+
+// Option 2: Original Style
+// <CollegeLogos />
+```
+
+### Enable Full White/Blue Theme
+
+Uncomment in `client/src/index.css`:
+
+```css
+/* Import White & Blue Theme */
+@import './styles/theme-white-blue.css';
+```
+
+## 🔌 API Endpoints
 
 ### Contact Form
 
@@ -210,7 +250,7 @@ The frontend will run on `http://localhost:3000` and automatically open in your 
 
 Submit a contact form entry.
 
-**Request Body:**
+**Request:**
 ```json
 {
   "name": "John Doe",
@@ -225,7 +265,7 @@ Submit a contact form entry.
 ```json
 {
   "success": true,
-  "message": "Thank you for contacting us! We will get back to you soon.",
+  "message": "Thank you for contacting us!",
   "data": {
     "id": "507f1f77bcf86cd799439011",
     "name": "John Doe",
@@ -234,13 +274,18 @@ Submit a contact form entry.
 }
 ```
 
-**GET** `/api/contact`
+**GET** `/api/contact` - Retrieve all submissions (admin)
 
-Retrieve all contact submissions (for admin purposes).
+**GET** `/api/health` - Health check
 
-**Health Check:** GET `/api/health`
+## 📱 Browser Support
 
-## Building for Production
+- ✅ Chrome/Edge: Full support
+- ✅ Firefox: Full support
+- ✅ Safari: Full support
+- ✅ Mobile browsers: Fully responsive
+
+## 🏗️ Building for Production
 
 ### Build Frontend
 
@@ -249,18 +294,16 @@ cd client
 npm run build
 ```
 
-This creates an optimized production build in the `client/build` directory.
+Creates optimized build in `client/build/`
 
-### Serve Production Build
+### Production Server Setup
 
-You can serve the built React app through the Express server:
-
-1. Update `server/server.js` to serve static files:
+Update `server/server.js`:
 
 ```javascript
 const path = require('path');
 
-// Serve static files from React app (add after routes)
+// Serve static files from React app
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static(path.join(__dirname, '../client/build')));
 
@@ -270,269 +313,160 @@ if (process.env.NODE_ENV === 'production') {
 }
 ```
 
-2. Set environment to production:
-
+Set production environment:
 ```bash
 # In server/.env
 NODE_ENV=production
 MONGODB_URI=your_production_mongodb_uri
 ```
 
-3. Start the server:
-
+Start server:
 ```bash
 cd server
 npm start
 ```
 
-## Deployment
+## 🚢 Deployment Options
 
-### Deploy to Heroku
+### Vercel (Frontend) + MongoDB Atlas
 
-1. Create a Heroku app:
-```bash
-heroku create adzzat-landing
-```
-
-2. Add MongoDB (using MongoDB Atlas):
-```bash
-heroku config:set MONGODB_URI=your_mongodb_atlas_uri
-```
-
-3. Deploy:
-```bash
-git push heroku main
-```
-
-### Deploy to Vercel (Frontend) + MongoDB Atlas (Database)
-
-**Frontend (Vercel):**
+**Frontend:**
 ```bash
 cd client
 vercel
 ```
 
-**Backend:** Deploy to Heroku, Railway, or Render.com
+**Backend:** Deploy to Heroku, Railway, or Render
 
-**Database:** Use MongoDB Atlas for cloud MongoDB.
+**Database:** MongoDB Atlas (cloud)
 
-### Deploy to AWS
+### Heroku (Full Stack)
+
+```bash
+heroku create adzzat-landing
+heroku config:set MONGODB_URI=your_atlas_uri
+git push heroku main
+```
+
+### AWS
 
 - Frontend: S3 + CloudFront
-- Backend: EC2 or Elastic Beanstalk
-- Database: MongoDB Atlas or DocumentDB
+- Backend: EC2 / Elastic Beanstalk
+- Database: MongoDB Atlas / DocumentDB
 
-## Development
-
-### Adding New Components
-
-1. Create component in `client/src/components/`
-2. Create corresponding CSS file
-3. Import and use in `LandingPage.js`
-
-### Adding New API Routes
-
-1. Create route file in `server/routes/`
-2. Add model in `server/models/` if needed
-3. Import route in `server/server.js`
-
-### Custom Hooks
-
-Located in `client/src/hooks/`:
-- `useParticles.js` - 3D particle animation system
-- `useIntersectionObserver.js` - Scroll-triggered animations
-
-## Troubleshooting
-
-### Error: Could not find a required file - index.html
-
-**Error Message:**
-```
-Could not find a required file.
-  Name: index.html
-  Searched in: C:\Users\...\landing-page\client\public
-```
-
-**Solution:**
-This happens if you cloned before the file was pushed. Pull the latest changes:
-```bash
-git pull origin claude/adzzat-landing-page-01HbfNVcgJnXp9FPHWBaec3v
-```
-
-Or manually create `client/public/index.html` with the content from the repository.
-
-### Error: MongoDB URI is undefined
-
-**Error Message:**
-```
-Error: The `uri` parameter to `openUri()` must be a string, got "undefined"
-```
-
-**Solution:**
-The `.env` file is missing in the server directory.
-
-**Fix:**
-```bash
-cd server
-cp .env.example .env
-```
-
-Then edit `server/.env` and ensure it contains:
-```env
-PORT=5000
-MONGODB_URI=mongodb://localhost:27017/adzzat
-NODE_ENV=development
-FRONTEND_URL=http://localhost:3000
-```
-
-**Why this happens:** `.env` files are not tracked by git (for security), so you must create them locally.
+## 🐛 Troubleshooting
 
 ### MongoDB Connection Failed
 
-**Error Message:**
+```bash
+# Start MongoDB
+brew services start mongodb-community  # macOS
+sudo systemctl start mongod            # Linux
+net start MongoDB                      # Windows
 ```
-MongoServerError: connect ECONNREFUSED 127.0.0.1:27017
+
+Or use **MongoDB Atlas** (cloud):
+```env
+MONGODB_URI=mongodb+srv://user:pass@cluster.mongodb.net/adzzat
 ```
-
-**Solutions:**
-
-1. **MongoDB is not running:**
-   ```bash
-   # macOS
-   brew services start mongodb-community
-
-   # Linux
-   sudo systemctl start mongod
-
-   # Windows
-   net start MongoDB
-   ```
-
-2. **MongoDB not installed:**
-   - Download from: https://www.mongodb.com/try/download/community
-   - Or use MongoDB Atlas (cloud): https://www.mongodb.com/atlas
-
-3. **Use MongoDB Atlas (Cloud Database):**
-   ```env
-   # In server/.env
-   MONGODB_URI=mongodb+srv://username:password@cluster.mongodb.net/adzzat
-   ```
 
 ### Port Already in Use
 
 ```bash
-# Windows
-netstat -ano | findstr :5000
-taskkill /PID <PID> /F
-
-netstat -ano | findstr :3000
-taskkill /PID <PID> /F
-
 # macOS/Linux
 lsof -ti:5000 | xargs kill -9
 lsof -ti:3000 | xargs kill -9
+
+# Windows
+netstat -ano | findstr :5000
+taskkill /PID <PID> /F
+```
+
+### Missing .env Files
+
+```bash
+cd server && cp .env.example .env
+cd ../client && cp .env.example .env
 ```
 
 ### Dependencies Installation Failed
 
-**Solution:**
 ```bash
-# Clear npm cache
 npm cache clean --force
-
-# Delete all node_modules
 rm -rf node_modules client/node_modules server/node_modules
-
-# Reinstall
-npm run install-all
+cd server && npm install
+cd ../client && npm install
 ```
 
-### CORS Errors
-
-Ensure `FRONTEND_URL` in server `.env` matches your React app URL:
-```env
-FRONTEND_URL=http://localhost:3000
-```
-
-### React Build Errors
-
-If you see missing dependencies:
-```bash
-cd client
-npm install --legacy-peer-deps
-```
-
-## Performance Optimization
+## ⚡ Performance Optimizations
 
 ### Frontend
-- Lazy load components with React.lazy()
-- Optimize images (use WebP format)
-- Reduce particle count for better performance (in `useParticles.js`)
-- Enable React production build
+- ✅ Lazy load components (React.lazy)
+- ✅ Optimize images (WebP format)
+- ✅ GPU-accelerated animations
+- ✅ Hardware-accelerated transforms
+- ✅ Reduced motion support
 
 ### Backend
-- Add Redis for caching
-- Implement rate limiting
-- Use MongoDB indexes (already configured in models)
-- Enable gzip compression
+- ✅ Helmet.js security headers
+- ✅ CORS configured
+- ✅ Input validation
+- ✅ MongoDB indexes
 
-## Security Considerations
+## 🔒 Security Features
 
-- Helmet.js enabled for security headers
-- Input validation with express-validator
+- Helmet.js for security headers
+- Input validation (express-validator)
+- XSS protection
 - CORS configured
-- Environment variables for sensitive data
-- XSS protection built-in
+- Environment variables for secrets
+- Sanitized user inputs
 
 **For Production:**
-- Add authentication for admin endpoints
+- Add authentication for admin routes
 - Implement rate limiting
-- Use HTTPS
+- Enable HTTPS
 - Add CSRF protection
-- Sanitize user inputs
 
-## Browser Support
-
-- Chrome/Edge: Full support
-- Firefox: Full support
-- Safari: Full support
-- Mobile browsers: Fully responsive
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
-
-## License
+## 📝 License
 
 Copyright © 2024 Adzzat. All rights reserved.
 
-## Support
+## 💬 Support
 
 For questions or issues:
-- Create an issue on GitHub
+- Create an issue on [GitHub](https://github.com/niket-singh/landing-page)
 - Contact: support@adzzat.com
 
-## Changelog
+## 🎯 Changelog
 
-### Version 1.0.0 (Current)
+### Version 2.0.0 (Current)
+- ✅ Soul AI inspired redesign
+- ✅ White & Blue theme
+- ✅ HeroWhiteBlue component
+- ✅ Enhanced animations library
+- ✅ Dual-layer college logos marquee
+- ✅ Floating orbs background
+- ✅ Glassmorphism effects
+- ✅ Expandable cards
+- ✅ Responsive redesign
+
+### Version 1.0.0
 - Initial MERN stack implementation
 - 3D particle system
-- Animated hero section
-- Full contact form with MongoDB integration
-- Responsive design
-- Admin API for viewing submissions
+- Contact form with MongoDB
+- Admin API
 
-## Future Enhancements
+## 🚀 Future Enhancements
 
-- [ ] Admin dashboard for managing contacts
-- [ ] Email notifications for form submissions
+- [ ] Admin dashboard for contacts
+- [ ] Email notifications
 - [ ] Newsletter subscription
-- [ ] Blog section
-- [ ] Case studies/portfolio
+- [ ] Blog/Case studies section
 - [ ] Multi-language support
-- [ ] Dark/Light theme toggle
 - [ ] Analytics integration
+- [ ] A/B testing framework
+
+---
+
+**Built with ❤️ for Adzzat**

@@ -1,0 +1,384 @@
+/* ============================================
+   COLLEGE LOGOS MARQUEE - SOUL AI INSPIRED
+   Infinite scrolling in 2 rows with modern design
+   ============================================ */
+
+/* Import Inter font (Soul AI style) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap');
+
+.college-logos-section-v2 {
+  padding: 120px 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background gradient overlay */
+.college-logos-section-v2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(180deg,
+    rgba(99, 102, 241, 0.02) 0%,
+    transparent 100%
+  );
+  pointer-events: none;
+}
+
+/* Section Header - Soul AI Style */
+.text-center-v2 {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 80px;
+  position: relative;
+  z-index: 2;
+}
+
+.section-badge-v2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 20px;
+  background: rgba(99, 102, 241, 0.08);
+  border: 1px solid rgba(99, 102, 241, 0.15);
+  border-radius: 50px;
+  margin-bottom: 24px;
+  font-family: 'Inter', sans-serif;
+  transition: all 0.3s ease;
+}
+
+.section-badge-v2:hover {
+  background: rgba(99, 102, 241, 0.12);
+  border-color: rgba(99, 102, 241, 0.25);
+}
+
+.badge-dot-v2 {
+  width: 8px;
+  height: 8px;
+  background: #6366f1;
+  border-radius: 50%;
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+}
+
+.badge-text-v2 {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6366f1;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.section-title-v2-soul {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  color: #0a0a0f;
+  margin-bottom: 16px;
+}
+
+.gradient-text-soul {
+  background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  display: inline-block;
+}
+
+.section-subtitle-v2-soul {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #64748b;
+  letter-spacing: 0.02em;
+}
+
+/* Marquee Wrapper */
+.logo-marquee-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+}
+
+/* Individual Marquee Row */
+.logo-marquee-row {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 32px;
+}
+
+.logo-marquee-row:last-child {
+  margin-bottom: 0;
+}
+
+/* Fade edges effect */
+.logo-marquee-row::before,
+.logo-marquee-row::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 150px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.logo-marquee-row::before {
+  left: 0;
+  background: linear-gradient(to right,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+.logo-marquee-row::after {
+  right: 0;
+  background: linear-gradient(to left,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(255, 255, 255, 0) 100%
+  );
+}
+
+/* Marquee Track - Infinite Scroll */
+.logo-marquee-track {
+  display: flex;
+  gap: 32px;
+  animation: scroll-left 40s linear infinite;
+  will-change: transform;
+}
+
+.logo-marquee-reverse {
+  animation: scroll-right 40s linear infinite;
+}
+
+/* Smooth infinite scroll animations */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes scroll-right {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+/* Pause on hover */
+.logo-marquee-row:hover .logo-marquee-track {
+  animation-play-state: paused;
+}
+
+/* Logo Item - Soul AI Minimalist Style */
+.logo-item-marquee {
+  flex-shrink: 0;
+  width: 160px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.8);
+  border-radius: 16px;
+  padding: 20px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow:
+    0 1px 3px rgba(0, 0, 0, 0.05),
+    0 1px 2px rgba(0, 0, 0, 0.06);
+}
+
+.logo-item-marquee:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 25px rgba(99, 102, 241, 0.15),
+    0 4px 10px rgba(0, 0, 0, 0.08);
+  border-color: rgba(99, 102, 241, 0.3);
+}
+
+.logo-item-marquee img {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%) opacity(0.6);
+  transition: filter 0.3s ease;
+}
+
+.logo-item-marquee:hover img {
+  filter: grayscale(0%) opacity(1);
+}
+
+/* Performance Optimizations */
+.logo-marquee-track {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .section-title-v2-soul {
+    font-size: 2.75rem;
+  }
+
+  .logo-marquee-track {
+    gap: 24px;
+    animation-duration: 35s;
+  }
+
+  .logo-item-marquee {
+    width: 140px;
+    height: 70px;
+    padding: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .college-logos-section-v2 {
+    padding: 80px 0;
+  }
+
+  .text-center-v2 {
+    margin-bottom: 60px;
+  }
+
+  .section-title-v2-soul {
+    font-size: 2.25rem;
+  }
+
+  .section-subtitle-v2-soul {
+    font-size: 1rem;
+  }
+
+  .logo-marquee-wrapper {
+    padding: 30px 0;
+  }
+
+  .logo-marquee-row {
+    margin-bottom: 24px;
+  }
+
+  .logo-marquee-track {
+    gap: 20px;
+    animation-duration: 30s;
+  }
+
+  .logo-item-marquee {
+    width: 120px;
+    height: 60px;
+    padding: 14px;
+  }
+
+  .logo-marquee-row::before,
+  .logo-marquee-row::after {
+    width: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title-v2-soul {
+    font-size: 1.875rem;
+  }
+
+  .logo-marquee-track {
+    gap: 16px;
+    animation-duration: 25s;
+  }
+
+  .logo-item-marquee {
+    width: 100px;
+    height: 55px;
+    padding: 12px;
+  }
+
+  .logo-marquee-row::before,
+  .logo-marquee-row::after {
+    width: 60px;
+  }
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .logo-marquee-track,
+  .logo-marquee-reverse {
+    animation: none;
+  }
+
+  .logo-marquee-track {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .badge-dot-v2 {
+    animation: none;
+  }
+}
+
+/* Dark mode support (optional) */
+@media (prefers-color-scheme: dark) {
+  .college-logos-section-v2 {
+    background: #0a0a0f;
+  }
+
+  .college-logos-section-v2::before {
+    background: linear-gradient(180deg,
+      rgba(99, 102, 241, 0.05) 0%,
+      transparent 100%
+    );
+  }
+
+  .section-title-v2-soul {
+    color: #ffffff;
+  }
+
+  .section-subtitle-v2-soul {
+    color: #94a3b8;
+  }
+
+  .logo-item-marquee {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+
+  .logo-item-marquee:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: rgba(99, 102, 241, 0.4);
+  }
+
+  .logo-marquee-row::before {
+    background: linear-gradient(to right,
+      rgba(10, 10, 15, 1) 0%,
+      rgba(10, 10, 15, 0) 100%
+    );
+  }
+
+  .logo-marquee-row::after {
+    background: linear-gradient(to left,
+      rgba(10, 10, 15, 1) 0%,
+      rgba(10, 10, 15, 0) 100%
+    );
+  }
+}

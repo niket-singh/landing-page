@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import NavbarV2 from '../components/NavbarV2';
 import HeroDark from '../components/HeroDark';
 import StatsSection from '../components/StatsSection';
@@ -9,6 +9,7 @@ import UseCasesSection from '../components/UseCasesSection';
 import CollegeLogosSoulAI from '../components/CollegeLogosSoulAI';
 import FAQV2 from '../components/FAQV2';
 import Contact from '../components/Contact';
+import ContactModal from '../components/ContactModal';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import '../styles/theme.css';
 import '../styles/animations.css';
@@ -19,30 +20,44 @@ const LandingPage = () => {
   // Initialize scroll animations
   useScrollAnimation();
 
+  // Modal state
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+
+  const openContactModal = () => {
+    setIsContactModalOpen(true);
+  };
+
+  const closeContactModal = () => {
+    setIsContactModalOpen(false);
+  };
+
   return (
     <div className="landing-page">
+      {/* Contact Modal */}
+      <ContactModal isOpen={isContactModalOpen} onClose={closeContactModal} />
+
       {/* Glass Navbar */}
       <NavbarV2 />
 
       {/* 1. Hero Section - Dark Gradient with Animated Blob */}
-      <HeroDark />
+      <HeroDark openContactModal={openContactModal} />
 
       {/* 2. Stats Section - Animated Counters (Soul AI Style) */}
       <StatsSection />
 
       {/* 3. Our Services */}
       <div id="services">
-        <ServicesV2 />
+        <ServicesV2 openContactModal={openContactModal} />
       </div>
 
       {/* 4. How to Join (Mapped to HowItWorks) - BLUE BACKGROUND */}
       <div id="how-it-works" className="section-blue">
-        <HowItWorksV2 />
+        <HowItWorksV2 openContactModal={openContactModal} />
       </div>
 
       {/* 5. Why to Choose (Mapped to Benefits) */}
       <div id="benefits">
-        <BenefitsV2 />
+        <BenefitsV2 openContactModal={openContactModal} />
       </div>
 
       {/* 6. Deep Expertise in AI/ML Use Cases - BLUE BACKGROUND */}

@@ -3,11 +3,7 @@ import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
 import './BenefitsV2.css';
 import '../styles/MASTER_THEME.css';
 
-const scrollToContact = () => {
-  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
-};
-
-const BenefitsV2 = () => {
+const BenefitsV2 = ({ openContactModal }) => {
   const [ref1, isVisible1] = useIntersectionObserver();
   const [ref2, isVisible2] = useIntersectionObserver();
 
@@ -121,7 +117,7 @@ const BenefitsV2 = () => {
               <p>Be part of a community building the future of artificial intelligence.</p>
             </div>
             <div className="cta-content-right">
-              <button className="btn-cta-white" onClick={scrollToContact}>
+              <button className="btn-cta-white" onClick={openContactModal}>
                 Apply Now
               </button>
             </div>

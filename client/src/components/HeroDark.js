@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import './HeroDark.css';
 
-const HeroDark = () => {
+const HeroDark = ({ openContactModal }) => {
   const contentRef = useRef(null);
 
   useEffect(() => {
@@ -38,7 +38,7 @@ const HeroDark = () => {
           LLM evaluation and dataset services. Scale your AI operations with confidence.
         </p>
         <div className="hero-cta">
-          <button className="button-primary" onClick={() => scrollTo('contact')}>
+          <button className="button-primary" onClick={openContactModal}>
             Start Building
           </button>
           <button className="button-secondary" onClick={() => scrollTo('services')}>

@@ -2,12 +2,14 @@ import React from 'react';
 import './CollegeLogos-SoulAI.css';
 
 const CollegeLogosSoulAI = () => {
-  // College logos I1 to I29
-  const collegeLogos = Array.from({ length: 29 }, (_, i) => ({
-    id: `I${i + 1}`,
-    name: `Institute ${i + 1}`,
-    path: `/assets/colleges/I${i + 1}.png`
-  }));
+  // College logos I1 to I29 (excluding I3)
+  const collegeLogos = Array.from({ length: 29 }, (_, i) => i + 1)
+    .filter(num => num !== 3) // Exclude I3
+    .map(num => ({
+      id: `I${num}`,
+      name: `Institute ${num}`,
+      path: `/assets/colleges/I${num}.png`
+    }));
 
   // Split into two rows
   const row1Logos = collegeLogos.slice(0, 15);

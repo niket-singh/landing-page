@@ -1,10 +1,10 @@
 /* ============================================
    ADZZAT - MAIN STYLES
-   Import master theme only
+   FUTURISTIC 2099 THEME
    ============================================ */
 
-/* Import Master White & Blue Theme */
-@import url('./styles/MASTER_THEME.css');
+/* Import Futuristic 2099 Theme - Next Generation Effects */
+@import url('./styles/FUTURISTIC_2099.css');
 
 /* Import Component-Specific Styles (already have their own CSS files) */
 /* These are imported automatically by their respective components */

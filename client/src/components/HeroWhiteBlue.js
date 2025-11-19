@@ -1,103 +1,71 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import './HeroWhiteBlue.css';
+import '../styles/MASTER_THEME.css';
 
 const HeroWhiteBlue = () => {
-  const [stats, setStats] = useState({ quality: 0, tasks: 0, response: 0 });
-
-  useEffect(() => {
-    const animateCounter = (target, setter, duration = 1800) => {
-      const start = 0;
-      const startTime = Date.now();
-
-      const updateCounter = () => {
-        const elapsed = Date.now() - startTime;
-        const progress = Math.min(elapsed / duration, 1);
-        const easeOut = 1 - Math.pow(1 - progress, 3);
-        const current = Math.floor(start + (target - start) * easeOut);
-        setter(current);
-
-        if (progress < 1) requestAnimationFrame(updateCounter);
-      };
-      requestAnimationFrame(updateCounter);
-    };
-
-    setTimeout(() => {
-      animateCounter(99.8, (val) => setStats(prev => ({ ...prev, quality: val })));
-      setTimeout(() => animateCounter(10000, (val) => setStats(prev => ({ ...prev, tasks: val }))), 150);
-      setTimeout(() => animateCounter(24, (val) => setStats(prev => ({ ...prev, response: val }))), 300);
-    }, 1000);
-  }, []);
-
   const scrollTo = (id) => {
     document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const heroImages = [
+    "/assets/images/WhatsApp%20Image%202025-11-19%20at%2000.47.40.jpeg",
+    "/assets/images/WhatsApp%20Image%202025-11-19%20at%2000.47.41%20(1).jpeg",
+    "/assets/images/WhatsApp%20Image%202025-11-19%20at%2000.47.41%20(2).jpeg"
+  ];
+
   return (
-    <section className="hero-white-blue">
-      <div className="hero-blobs-blue">
-        <div className="hero-blob-blue hero-blob-blue-1"></div>
-        <div className="hero-blob-blue hero-blob-blue-2"></div>
-      </div>
-      <div className="hero-grid-pattern"></div>
-
+    <section className="hero-section">
       <div className="container-v2">
-        <div className="hero-content-blue">
-          <div className="hero-badge-blue">
-            <span className="badge-dot-blue"></span>
-            <span className="badge-text-blue">Trusted by 500+ Companies</span>
-          </div>
-
-          <h1 className="hero-title-blue">
-            Where Elite Talent
-            <br />
-            <span className="gradient-blue-text">Powers AI Innovation</span>
-          </h1>
-
-          <p className="hero-subtitle-blue">
-            Connect with pre-vetted AI experts, scale your LLM evaluation,
-            and build production-grade datasets — all in one platform.
-          </p>
-
-          <div className="hero-cta-blue">
-            <button onClick={() => scrollTo('contact')} className="btn-primary-blue">
-              <span>Get Started</span>
-              <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
-                <path d="M6.75 13.5L11.25 9L6.75 4.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-              </svg>
-            </button>
-            <button onClick={() => scrollTo('services')} className="btn-secondary-blue">
-              <span>Learn More</span>
-            </button>
-          </div>
-
-          <div className="hero-stats-blue">
-            <div className="stat-item-blue">
-              <div className="stat-number-blue">
-                {stats.quality > 0 && `${stats.quality.toFixed(1)}%`}
-              </div>
-              <div className="stat-label-blue">Quality Score</div>
+        <div className="hero-container">
+          
+          {/* LEFT: Content */}
+          <div className="hero-content-left">
+            <div className="section-badge fade-in-up">
+              <span style={{ marginRight: '8px' }}>✨</span>
+              <span>Generative AI for Enterprises</span>
             </div>
-            <div className="stat-divider-blue"></div>
-            <div className="stat-item-blue">
-              <div className="stat-number-blue">
-                {stats.tasks > 0 && `${(stats.tasks / 1000).toFixed(0)}k+`}
-              </div>
-              <div className="stat-label-blue">Tasks Completed</div>
-            </div>
-            <div className="stat-divider-blue"></div>
-            <div className="stat-item-blue">
-              <div className="stat-number-blue">
-                {stats.response > 0 && `${stats.response}h`}
-              </div>
-              <div className="stat-label-blue">Avg Response</div>
+
+            <h1 className="section-title fade-in-up delay-100" style={{ fontSize: '4rem' }}>
+              Elite Talent Meets <br />
+              <span className="gradient-text-blue">Enterprise AI Solutions</span>
+            </h1>
+
+            <p className="section-subtitle fade-in-up delay-200">
+              The only platform combining a vetted talent marketplace with enterprise-grade 
+              LLM evaluation and dataset services. Scale your AI operations with confidence.
+            </p>
+
+            <div className="hero-cta-group fade-in-up delay-300">
+              <button onClick={() => scrollTo('contact')} className="btn-premium-blue">
+                Start Building
+              </button>
+              <button onClick={() => scrollTo('services')} className="btn-explore-service">
+                Explore Services
+              </button>
             </div>
           </div>
+
+          {/* RIGHT: Image Masonry Grid */}
+          <div className="hero-visual-desktop">
+            <div className="hero-bg-decoration"></div>
+
+            {/* Card 1: Main Tall */}
+            <div className="masonry-card card-main glass-card">
+              <img src={heroImages[0]} alt="AI Talent at Work" />
+            </div>
+
+            {/* Card 2: Top Right */}
+            <div className="masonry-card card-top-right glass-card">
+              <img src={heroImages[1]} alt="Team Collaboration" />
+            </div>
+
+            {/* Card 3: Bottom Right */}
+            <div className="masonry-card card-bottom-right glass-card">
+              <img src={heroImages[2]} alt="AI Workshop" />
+            </div>
+          </div>
+
         </div>
-      </div>
-
-      <div className="scroll-indicator-blue" onClick={() => scrollTo('services')}>
-        <span className="scroll-text-blue">Scroll</span>
-        <div className="scroll-icon-blue"></div>
       </div>
     </section>
   );

@@ -1,104 +1,71 @@
 import React from 'react';
 import NavbarV2 from '../components/NavbarV2';
-// eslint-disable-next-line no-unused-vars
-import HeroV2 from '../components/HeroV2';
 import HeroWhiteBlue from '../components/HeroWhiteBlue';
 import ServicesV2 from '../components/ServicesV2';
 import HowItWorksV2 from '../components/HowItWorksV2';
 import BenefitsV2 from '../components/BenefitsV2';
-import ExpertiseGridV2 from '../components/ExpertiseGridV2';
-import ImpactSectionV2 from '../components/ImpactSectionV2';
-// eslint-disable-next-line no-unused-vars
-import CollegeLogos from '../components/CollegeLogos';
+import ExpertiseDeccan from '../components/ExpertiseDeccan';
 import CollegeLogosSoulAI from '../components/CollegeLogosSoulAI';
 import FAQV2 from '../components/FAQV2';
 import Contact from '../components/Contact';
-import FloatingOrbs from '../components/FloatingOrbs';
-import './LandingPage.css';
+import '../styles/MASTER_THEME.css';
 
 const LandingPage = () => {
   return (
     <div className="landing-page">
-      {/* Premium Floating Orbs Background */}
-      <FloatingOrbs />
+      {/* Animated Background Blobs */}
+      <div className="bg-blob blob-1"></div>
+      <div className="bg-blob blob-2"></div>
 
-      {/* Modern Glassmorphism Navbar */}
+      {/* Glass Navbar */}
       <NavbarV2 />
 
-      {/* Hero Section - Clean & Simple */}
-      {/* Toggle between HeroV2 (purple premium) or HeroWhiteBlue (clean blue) */}
+      {/* 1. Hero Section (Clean, Blue, No Icon Boxes) */}
       <HeroWhiteBlue />
-      {/* <HeroV2 /> */}
 
-      {/* Services Section - Glass Cards */}
-      <ServicesV2 />
+      {/* 2. Our Services */}
+      <div id="services">
+        <ServicesV2 />
+      </div>
 
-      {/* How It Works - Timeline */}
-      <HowItWorksV2 />
+      {/* 3. How to Join (Mapped to HowItWorks) */}
+      <div id="how-it-works">
+        <HowItWorksV2 />
+      </div>
 
-      {/* Benefits - For Talent */}
-      <BenefitsV2 />
+      {/* 4. Why to Choose (Mapped to Benefits) */}
+      <div id="benefits">
+        <BenefitsV2 />
+      </div>
 
-      {/* Expertise Grid - AI/ML Use Cases */}
-      <ExpertiseGridV2 />
+      {/* 5. AI/ML Use Cases (Copied from Deccan AI) */}
+      <div id="expertise">
+        <ExpertiseDeccan />
+      </div>
 
-      {/* Impact Section - Better Punchline + Talent Showcase */}
-      <ImpactSectionV2 />
-
-      {/* College Logos - Infinite Scroll Bands */}
-      {/* Toggle between CollegeLogosSoulAI (Soul AI style) or CollegeLogos (original) */}
+      {/* 6. Experts from Top Colleges (Copied from Soul AI) */}
       <CollegeLogosSoulAI />
-      {/* <CollegeLogos /> */}
 
-      {/* FAQ Section - Interactive Accordion */}
-      <FAQV2 />
+      {/* 7. FAQ Section */}
+      <div id="faq">
+        <FAQV2 />
+      </div>
 
-      {/* Contact Form */}
-      <Contact />
+      {/* 8. Contact */}
+      <div id="contact">
+        <Contact />
+      </div>
 
-      {/* Footer */}
-      <footer className="footer-v2">
+      {/* Footer (Keep existing simple V2 footer structure) */}
+      <footer className="footer-v2 section-dark-blue" style={{ padding: '4rem 2rem' }}>
         <div className="container-v2">
-          <div className="footer-content-v2">
-            <div className="footer-brand-v2">
-              <div className="footer-logo-v2">
-                <span className="logo-text-v2">Adzzat</span>
-              </div>
-              <p className="footer-tagline">Exceptional Humans. Exceptional AI.</p>
-              <p className="footer-stat">500+ professionals building the future of AI</p>
+          <div style={{ display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '2rem' }}>
+            <div>
+              <h2 style={{ color: 'white', fontSize: '1.5rem', fontWeight: 'bold' }}>Adzzat</h2>
+              <p style={{ opacity: 0.8, marginTop: '0.5rem' }}>Exceptional Humans. Exceptional AI.</p>
             </div>
-            <div className="footer-links-v2">
-              <div className="footer-column">
-                <h4>Services</h4>
-                <ul>
-                  <li><a href="#services">Hire Talent</a></li>
-                  <li><a href="#services">LLM Evaluation</a></li>
-                  <li><a href="#services">Dataset Creation</a></li>
-                </ul>
-              </div>
-              <div className="footer-column">
-                <h4>For Talent</h4>
-                <ul>
-                  <li><a href="#benefits">Why Join</a></li>
-                  <li><a href="#how-it-works">Application Process</a></li>
-                  <li><a href="#benefits">Apply Now</a></li>
-                </ul>
-              </div>
-              <div className="footer-column">
-                <h4>Resources</h4>
-                <ul>
-                  <li><a href="#expertise">Expertise</a></li>
-                  <li><a href="#faq">FAQ</a></li>
-                  <li><a href="#contact">Contact</a></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-          <div className="footer-bottom-v2">
-            <p>&copy; 2024 Adzzat. All rights reserved.</p>
-            <div className="footer-links-bottom">
-              <a href="#privacy">Privacy Policy</a>
-              <a href="#terms">Terms of Service</a>
+            <div style={{ opacity: 0.6 }}>
+              &copy; 2024 Adzzat. All rights reserved.
             </div>
           </div>
         </div>

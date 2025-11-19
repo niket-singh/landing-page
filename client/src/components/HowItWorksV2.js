@@ -1,139 +1,59 @@
 import React from 'react';
 import { useIntersectionObserver } from '../hooks/useIntersectionObserver';
-import './HowItWorksV2.css';
+import '../styles/MASTER_THEME.css';
 
 const HowItWorksV2 = ({ openContactModal }) => {
   const [ref, isVisible] = useIntersectionObserver();
 
   const steps = [
-    {
-      number: "01",
-      title: "Application",
-      description: "Submit your profile once, and we'll match you to opportunities based on your skills and interests.",
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <path d="M16 4V28M4 16H28" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-          <circle cx="16" cy="16" r="3" fill="white"/>
-        </svg>
-      ),
-      features: [
-        "Quick 5-minute application",
-        "One-time submission",
-        "Skills-based matching"
-      ]
-    },
-    {
-      number: "02",
-      title: "Screening Interview",
-      description: "A short conversation or task-based interview to verify foundational skills and communication needed for global AI work.",
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <circle cx="16" cy="12" r="5" stroke="white" strokeWidth="2"/>
-          <path d="M8 28C8 23 11 20 16 20C21 20 24 23 24 28" stroke="white" strokeWidth="2" strokeLinecap="round"/>
-        </svg>
-      ),
-      features: [
-        "30-minute conversation",
-        "Communication assessment",
-        "Culture fit evaluation"
-      ]
-    },
-    {
-      number: "03",
-      title: "Skill-Specific Evaluation",
-      description: "Role-based assessments or project simulations depending on the workflow (e.g., LLM evals, prompt engineering, coding tasks, dataset work).",
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <rect x="6" y="6" width="20" height="20" rx="2" stroke="white" strokeWidth="2"/>
-          <path d="M12 16L15 19L21 13" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-        </svg>
-      ),
-      features: [
-        "Designed by AI experts",
-        "Real-world production tasks",
-        "Training + feedback included"
-      ]
-    },
-    {
-      number: "04",
-      title: "Become a Top Contributor",
-      description: "Join our elite pool of AI workforce talent, get staffed on projects, and start earning while working with global product teams.",
-      icon: (
-        <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
-          <path d="M16 4L20 12L28 14L22 20L24 28L16 24L8 28L10 20L4 14L12 12L16 4Z" fill="white"/>
-        </svg>
-      ),
-      features: [
-        "Grow into lead roles",
-        "Multi-month recurring work",
-        "Access bonuses & higher-tier projects"
-      ]
-    }
+    { num: "01", title: "Share Your Requirements", desc: "Tell us about your project needs, timeline, and the specific skills or datasets required." },
+    { num: "02", title: "AI-Matching & Curating", desc: "Our algorithm matches you with the top 1% of domain experts from our pool of 500+ professionals." },
+    { num: "03", title: "Kickoff & Execution", desc: "Work begins immediately with seamless integration into your existing workflows (Slack, Jira, GitHub)." },
+    { num: "04", title: "Quality Assurance", desc: "Rigorous multi-layer QA process ensures every deliverable meets production standards." }
   ];
 
   return (
-    <section id="how-it-works" className="how-it-works-v2">
+    <section className="section-dark-blue" style={{ padding: '6rem 0' }}>
+      {/* Background Gradients */}
+      <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: '100%', overflow: 'hidden', pointerEvents: 'none' }}>
+        <div style={{ position: 'absolute', top: '-20%', right: '-10%', width: '600px', height: '600px', background: 'radial-gradient(circle, rgba(47,128,237,0.15) 0%, transparent 70%)' }}></div>
+      </div>
+
       <div className="container-v2">
-        {/* Section Header */}
-        <div className="section-header-v2">
-          <div className="section-badge">
-            <span className="badge-icon">🎯</span>
-            <span>Process</span>
-          </div>
-          <h2 className="section-title-v2">
-            How to Join
-            <div className="gradient-text-v2"> Adzzat</div>
+        <div className="section-header">
+          <div className="section-badge" style={{ background: 'rgba(255,255,255,0.1)', color: 'white', borderColor: 'rgba(255,255,255,0.2)' }}>Process</div>
+          <h2 className="section-title" style={{ color: 'white' }}>
+            How We <span style={{ color: '#60a5fa' }}>Deliver Excellence</span>
           </h2>
-          <p className="section-subtitle-v2">
-            A simple, transparent process to join India's top AI workforce.
-            From application to earning in 4 clear steps.
-          </p>
         </div>
 
-        {/* Timeline */}
-        <div ref={ref} className={`timeline-v2 ${isVisible ? 'visible' : ''}`}>
+        <div ref={ref} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem', marginTop: '4rem' }}>
           {steps.map((step, index) => (
-            <div key={index} className="timeline-step">
-              <div className="step-line"></div>
-
-              <div className="step-number-badge">
-                <span>{step.number}</span>
-              </div>
-
-              <div className="step-card glass-card">
-                <div className="step-icon">
-                  {step.icon}
-                </div>
-
-                <div className="step-content">
-                  <h3>{step.title}</h3>
-                  <p>{step.description}</p>
-
-                  <ul className="step-features">
-                    {step.features.map((feature, idx) => (
-                      <li key={idx}>
-                        <span className="check-sm">✓</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
+            <div key={index} style={{
+              position: 'relative',
+              padding: '2rem',
+              background: 'rgba(255,255,255,0.03)',
+              border: '1px solid rgba(255,255,255,0.1)',
+              borderRadius: '20px',
+              transition: 'all 0.3s ease',
+              opacity: isVisible ? 1 : 0,
+              transform: isVisible ? 'translateY(0)' : 'translateY(30px)',
+              transitionDelay: `${index * 100}ms`
+            }}
+            onMouseOver={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.08)'; e.currentTarget.style.borderColor = '#60a5fa'; }}
+            onMouseOut={(e) => { e.currentTarget.style.background = 'rgba(255,255,255,0.03)'; e.currentTarget.style.borderColor = 'rgba(255,255,255,0.1)'; }}
+            >
+              <div style={{ fontSize: '3rem', fontWeight: '800', color: 'rgba(255,255,255,0.1)', marginBottom: '1rem' }}>{step.num}</div>
+              <h3 style={{ color: 'white', fontSize: '1.25rem', marginBottom: '0.75rem' }}>{step.title}</h3>
+              <p style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.95rem' }}>{step.desc}</p>
             </div>
           ))}
         </div>
 
-        {/* CTA */}
-        <div className="timeline-cta">
-          <div className="cta-content">
-            <h3>Ready to Get Started?</h3>
-            <p>Join 500+ professionals already working on cutting-edge AI projects</p>
-          </div>
-          <button className="btn-primary-v2 btn-large" onClick={openContactModal}>
-            <span>Start Application</span>
-            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-              <path d="M7.5 15L12.5 10L7.5 5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-            </svg>
+        {/* CTA Button */}
+        <div style={{ textAlign: 'center', marginTop: '4rem' }}>
+          <button className="btn-premium-blue" onClick={openContactModal} style={{ background: 'linear-gradient(135deg, #60a5fa 0%, #3b82f6 100%)' }}>
+            Start Application
           </button>
         </div>
       </div>

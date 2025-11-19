@@ -1,37 +1,56 @@
 /* ============================================
-   USE CASES SECTION - Deccan AI Inspired
+   USE CASES SECTION - Deccan AI Inspired (Dark Theme)
    ============================================ */
 
 .use-cases-section {
   padding: var(--spacing-xl, 6rem) 0;
-  background-color: var(--color-background-white, #FFFFFF);
+  background: linear-gradient(135deg, #0B1B3F 0%, #1747A0 100%);
   position: relative;
   overflow: hidden;
+  color: #FFFFFF;
 }
 
-/* Background Decoration */
+/* Background Decoration - Animated Blobs */
 .use-cases-section::before {
   content: '';
   position: absolute;
-  top: 0;
-  right: -10%;
-  width: 40%;
-  height: 100%;
-  background: radial-gradient(circle at center, var(--color-background-light, #F0F4FF) 0%, transparent 70%);
-  opacity: 0.5;
+  top: -10%;
+  right: -5%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle at center, rgba(10, 77, 255, 0.4) 0%, transparent 70%);
+  opacity: 0.6;
   pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: blobFloat 15s infinite alternate ease-in-out;
 }
 
 .use-cases-section::after {
   content: '';
   position: absolute;
-  bottom: 0;
-  left: -10%;
-  width: 40%;
-  height: 100%;
-  background: radial-gradient(circle at center, var(--color-background-light, #F0F4FF) 0%, transparent 70%);
-  opacity: 0.5;
+  bottom: -10%;
+  left: -5%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle at center, rgba(128, 185, 255, 0.3) 0%, transparent 70%);
+  opacity: 0.6;
   pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: blobFloat 12s infinite alternate-reverse ease-in-out;
+}
+
+@keyframes blobFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.1);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
 }
 
 /* Section Header */
@@ -45,15 +64,16 @@
 
 .section-heading {
   font-size: clamp(2rem, 4vw, 2.75rem);
-  color: var(--color-primary-dark, #1E3A8A);
+  color: #FFFFFF;
   margin-bottom: var(--spacing-sm, 1rem);
   font-weight: 800;
   line-height: 1.2;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .section-subheading {
   font-size: 1.125rem;
-  color: var(--color-text-light, #6B7280);
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.6;
   margin: 0;
 }
@@ -70,8 +90,9 @@
 
 /* Individual Use Case Card */
 .use-case-card {
-  background: var(--color-background-white, #FFFFFF);
-  border: 1px solid #E5E7EB;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: var(--radius-lg, 0.75rem);
   padding: var(--spacing-md, 2rem);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -88,20 +109,21 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, var(--color-primary, #0A4DFF) 0%, var(--color-primary-light, #80B9FF) 100%);
+  background: linear-gradient(135deg, rgba(10, 77, 255, 0.2) 0%, rgba(128, 185, 255, 0.1) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
 }
 
 .use-case-card:hover::before {
-  opacity: 0.03;
+  opacity: 1;
 }
 
 .use-case-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(10, 77, 255, 0.12);
-  border-color: var(--color-primary-light, #80B9FF);
+  box-shadow: 0 12px 24px rgba(10, 77, 255, 0.3);
+  border-color: rgba(128, 185, 255, 0.5);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 /* Card Icon */
@@ -119,7 +141,7 @@
 /* Card Title */
 .card-title {
   font-size: 1.25rem;
-  color: var(--color-primary, #0A4DFF);
+  color: #80B9FF;
   margin-bottom: var(--spacing-xs, 0.5rem);
   font-weight: 700;
   line-height: 1.3;
@@ -127,13 +149,13 @@
 }
 
 .use-case-card:hover .card-title {
-  color: var(--color-primary-dark, #1E3A8A);
+  color: #FFFFFF;
 }
 
 /* Card Description */
 .card-description {
   font-size: 0.9375rem;
-  color: var(--color-text-medium, #555555);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.6;
   margin: 0;
 }
@@ -142,9 +164,10 @@
 .use-cases-cta {
   text-align: center;
   padding: var(--spacing-lg, 4rem) var(--spacing-md, 2rem);
-  background: linear-gradient(135deg, var(--color-background-light, #F0F4FF) 0%, #FFFFFF 100%);
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: var(--radius-xl, 1rem);
-  border: 2px solid var(--color-primary-light, #80B9FF);
+  border: 2px solid rgba(128, 185, 255, 0.3);
   margin-top: var(--spacing-lg, 4rem);
   position: relative;
   overflow: hidden;
@@ -157,20 +180,20 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 30% 50%, rgba(10, 77, 255, 0.05) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(10, 77, 255, 0.15) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .use-cases-cta h3 {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  color: var(--color-primary-dark, #1E3A8A);
+  color: #FFFFFF;
   margin-bottom: var(--spacing-sm, 1rem);
   font-weight: 700;
 }
 
 .use-cases-cta p {
   font-size: 1.125rem;
-  color: var(--color-text-medium, #555555);
+  color: rgba(255, 255, 255, 0.85);
   margin-bottom: var(--spacing-md, 2rem);
   max-width: 600px;
   margin-left: auto;
@@ -268,6 +291,11 @@
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
+  .use-cases-section::before,
+  .use-cases-section::after {
+    animation: none;
+  }
+
   .use-case-card,
   .card-icon,
   .card-title {

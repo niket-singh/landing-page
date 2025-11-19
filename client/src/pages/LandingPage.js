@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import NavbarV2 from '../components/NavbarV2';
-import HeroWhiteBlue from '../components/HeroWhiteBlue';
+import HeroDark from '../components/HeroDark';
 import StatsSection from '../components/StatsSection';
 import ServicesV2 from '../components/ServicesV2';
 import HowItWorksV2 from '../components/HowItWorksV2';
@@ -23,8 +23,8 @@ const LandingPage = () => {
       {/* Glass Navbar */}
       <NavbarV2 />
 
-      {/* 1. Hero Section with Animated Blobs */}
-      <HeroWhiteBlue />
+      {/* 1. Hero Section - Dark Gradient with Animated Blob */}
+      <HeroDark />
 
       {/* 2. Stats Section - Animated Counters (Soul AI Style) */}
       <StatsSection />

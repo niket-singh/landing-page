@@ -1,0 +1,380 @@
+/* ============================================
+   ANIMATIONS & EFFECTS
+   Soul AI Inspired - Smooth, Professional
+   ============================================ */
+
+/* ============================================
+   SCROLL ANIMATIONS - Fade & Slide
+   ============================================ */
+
+.fade-slide {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-slide.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 0.8s ease-out;
+}
+
+.fade-in.in-view {
+  opacity: 1;
+}
+
+.slide-up {
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.slide-up.in-view {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.slide-left.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.7s ease-out, transform 0.7s ease-out;
+}
+
+.slide-right.in-view {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Staggered animation delays for child elements */
+.fade-slide:nth-child(1) { transition-delay: 0.1s; }
+.fade-slide:nth-child(2) { transition-delay: 0.2s; }
+.fade-slide:nth-child(3) { transition-delay: 0.3s; }
+.fade-slide:nth-child(4) { transition-delay: 0.4s; }
+.fade-slide:nth-child(5) { transition-delay: 0.5s; }
+.fade-slide:nth-child(6) { transition-delay: 0.6s; }
+
+/* ============================================
+   ANIMATED BLOB BACKGROUND
+   ============================================ */
+
+@keyframes blobMove {
+  0% {
+    transform: translateX(-50%) scale(1) rotate(0deg);
+  }
+  33% {
+    transform: translateX(-40%) scale(1.1) rotate(120deg);
+  }
+  66% {
+    transform: translateX(-60%) scale(0.95) rotate(240deg);
+  }
+  100% {
+    transform: translateX(-50%) scale(1) rotate(360deg);
+  }
+}
+
+@keyframes blobPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.1);
+    opacity: 0.5;
+  }
+}
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  z-index: -1;
+  will-change: transform;
+}
+
+.hero-blob-1 {
+  top: -20%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(circle at center, var(--color-primary, #0A4DFF) 0%, var(--color-primary-light, #80B9FF) 100%);
+  animation: blobMove 20s infinite alternate ease-in-out;
+  transform: translateX(-50%);
+}
+
+.hero-blob-2 {
+  bottom: -30%;
+  right: -10%;
+  width: 80%;
+  height: 80%;
+  background: radial-gradient(circle at center, var(--color-primary-light, #80B9FF) 0%, var(--color-primary, #0A4DFF) 100%);
+  animation: blobPulse 15s infinite ease-in-out;
+}
+
+/* ============================================
+   FLOATING ANIMATION
+   ============================================ */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.floating-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+/* ============================================
+   CARD HOVER EFFECTS
+   ============================================ */
+
+.card-hover {
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+
+.card-hover:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.08);
+}
+
+/* ============================================
+   PULSE ANIMATION (for CTAs)
+   ============================================ */
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(10, 77, 255, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 10px rgba(10, 77, 255, 0);
+  }
+}
+
+.pulse {
+  animation: pulse 2s infinite;
+}
+
+/* ============================================
+   GRADIENT ANIMATION
+   ============================================ */
+
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animated-gradient {
+  background-size: 200% 200%;
+  animation: gradientShift 10s ease infinite;
+}
+
+/* ============================================
+   SHIMMER EFFECT (Loading)
+   ============================================ */
+
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.shimmer {
+  background: linear-gradient(
+    to right,
+    #f6f7f8 0%,
+    #edeef1 20%,
+    #f6f7f8 40%,
+    #f6f7f8 100%
+  );
+  background-size: 1000px 100%;
+  animation: shimmer 2s linear infinite;
+}
+
+/* ============================================
+   SCALE ON HOVER
+   ============================================ */
+
+.scale-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.scale-on-hover:hover {
+  transform: scale(1.05);
+}
+
+/* ============================================
+   ROTATE ON HOVER (for icons)
+   ============================================ */
+
+.rotate-on-hover {
+  transition: transform 0.3s ease;
+}
+
+.rotate-on-hover:hover {
+  transform: rotate(5deg);
+}
+
+/* ============================================
+   GLOW EFFECT
+   ============================================ */
+
+.glow {
+  box-shadow: 0 0 10px rgba(10, 77, 255, 0.5);
+  transition: box-shadow 0.3s ease;
+}
+
+.glow:hover {
+  box-shadow: 0 0 20px rgba(10, 77, 255, 0.8);
+}
+
+/* ============================================
+   NUMBER COUNTER ANIMATION
+   ============================================ */
+
+.stat-value {
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.stat-value.counting {
+  animation: countUp 0.1s ease-in-out;
+}
+
+@keyframes countUp {
+  0% {
+    opacity: 0.7;
+    transform: scale(1.1);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* ============================================
+   PARALLAX EFFECT (subtle)
+   ============================================ */
+
+.parallax {
+  will-change: transform;
+  transition: transform 0.1s ease-out;
+}
+
+/* ============================================
+   BOUNCE EFFECT
+   ============================================ */
+
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.bounce {
+  animation: bounce 2s infinite;
+}
+
+/* ============================================
+   PROGRESSIVE LOAD (for images)
+   ============================================ */
+
+.progressive-image {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.progressive-image.loaded {
+  opacity: 1;
+}
+
+/* ============================================
+   ACCESSIBILITY - REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-slide,
+  .fade-in,
+  .slide-up,
+  .slide-left,
+  .slide-right,
+  .floating,
+  .floating-slow,
+  .card-hover:hover,
+  .scale-on-hover:hover,
+  .rotate-on-hover:hover,
+  .hero-blob-1,
+  .hero-blob-2,
+  .pulse,
+  .animated-gradient,
+  .shimmer,
+  .bounce {
+    animation: none !important;
+    transition: none !important;
+    transform: none !important;
+  }
+
+  .fade-slide,
+  .fade-in,
+  .slide-up,
+  .slide-left,
+  .slide-right {
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+/* Use GPU acceleration for animations */
+.fade-slide,
+.slide-up,
+.slide-left,
+.slide-right,
+.card-hover,
+.scale-on-hover,
+.floating,
+.hero-blob {
+  will-change: transform, opacity;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}

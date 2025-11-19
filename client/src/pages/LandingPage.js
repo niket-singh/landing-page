@@ -1,5 +1,6 @@
 import React from 'react';
 import NavbarV2 from '../components/NavbarV2';
+// eslint-disable-next-line no-unused-vars
 import HeroV2 from '../components/HeroV2';
 import HeroWhiteBlue from '../components/HeroWhiteBlue';
 import ServicesV2 from '../components/ServicesV2';
@@ -7,6 +8,7 @@ import HowItWorksV2 from '../components/HowItWorksV2';
 import BenefitsV2 from '../components/BenefitsV2';
 import ExpertiseGridV2 from '../components/ExpertiseGridV2';
 import ImpactSectionV2 from '../components/ImpactSectionV2';
+// eslint-disable-next-line no-unused-vars
 import CollegeLogos from '../components/CollegeLogos';
 import CollegeLogosSoulAI from '../components/CollegeLogosSoulAI';
 import FAQV2 from '../components/FAQV2';

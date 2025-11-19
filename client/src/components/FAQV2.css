@@ -1,6 +1,14 @@
 .faq-v2 {
   padding: 8rem 0;
-  background: linear-gradient(180deg, #ffffff 0%, #f8f9ff 100%);
+  background: linear-gradient(180deg, #0f1d4e 0%, #0b1636 100%);
+  min-height: 420px;
+  box-sizing: border-box;
+}
+.container-v2 {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 .faq-layout {
   display: grid;
@@ -19,6 +27,8 @@
   display: flex;
   flex-direction: column;
   gap: 1rem;
+  position: relative;
+  z-index: 2;
 }
 .faq-item {
   background: rgba(255, 255, 255, 0.8);

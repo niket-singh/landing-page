@@ -4,54 +4,11 @@
 
 .use-cases-section {
   padding: var(--spacing-xl, 6rem) 0;
-  background: #FFFFFF;
   position: relative;
   overflow: hidden;
-  color: #1B1F23;
 }
 
-/* Background Decoration - Animated Blobs */
-.use-cases-section::before {
-  content: '';
-  position: absolute;
-  top: -10%;
-  right: -5%;
-  width: 50%;
-  height: 50%;
-  background: radial-gradient(circle at center, rgba(10, 21, 56, 0.05) 0%, transparent 70%);
-  opacity: 0.6;
-  pointer-events: none;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: blobFloat 15s infinite alternate ease-in-out;
-}
-
-.use-cases-section::after {
-  content: '';
-  position: absolute;
-  bottom: -10%;
-  left: -5%;
-  width: 50%;
-  height: 50%;
-  background: radial-gradient(circle at center, rgba(10, 21, 56, 0.03) 0%, transparent 70%);
-  opacity: 0.6;
-  pointer-events: none;
-  border-radius: 50%;
-  filter: blur(80px);
-  animation: blobFloat 12s infinite alternate-reverse ease-in-out;
-}
-
-@keyframes blobFloat {
-  0% {
-    transform: translate(0, 0) scale(1);
-  }
-  50% {
-    transform: translate(20px, -20px) scale(1.1);
-  }
-  100% {
-    transform: translate(-20px, 20px) scale(0.95);
-  }
-}
+/* Background Decoration removed - now handled by section-blue class */
 
 /* Section Header */
 .section-header {
@@ -62,17 +19,15 @@
   margin-right: auto;
 }
 
-.section-heading {
+.use-cases-section .section-heading {
   font-size: clamp(2rem, 4vw, 2.75rem);
-  color: #0A1538;
   margin-bottom: var(--spacing-sm, 1rem);
   font-weight: 800;
   line-height: 1.2;
 }
 
-.section-subheading {
+.use-cases-section .section-subheading {
   font-size: 1.125rem;
-  color: #555555;
   line-height: 1.6;
   margin: 0;
 }
@@ -89,15 +44,15 @@
 
 /* Individual Use Case Card */
 .use-case-card {
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-lg, 0.75rem);
   padding: var(--spacing-md, 2rem);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
   overflow: hidden;
   cursor: pointer;
-  box-shadow: 0 2px 8px rgba(10, 21, 56, 0.05);
 }
 
 /* Card hover effect */
@@ -108,7 +63,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(10, 21, 56, 0.03) 0%, rgba(10, 21, 56, 0.01) 100%);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.15) 0%, rgba(255, 255, 255, 0.05) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
@@ -120,8 +75,9 @@
 
 .use-case-card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 12px 24px rgba(10, 21, 56, 0.15);
-  border-color: #0A1538;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.15);
 }
 
 /* Card Icon */
@@ -137,23 +93,17 @@
 }
 
 /* Card Title */
-.card-title {
+.use-case-card .card-title {
   font-size: 1.25rem;
-  color: #0A1538;
   margin-bottom: var(--spacing-xs, 0.5rem);
   font-weight: 700;
   line-height: 1.3;
   transition: color 0.3s ease;
 }
 
-.use-case-card:hover .card-title {
-  color: #060D24;
-}
-
 /* Card Description */
-.card-description {
+.use-case-card .card-description {
   font-size: 0.9375rem;
-  color: #555555;
   line-height: 1.6;
   margin: 0;
 }
@@ -162,9 +112,10 @@
 .use-cases-cta {
   text-align: center;
   padding: var(--spacing-lg, 4rem) var(--spacing-md, 2rem);
-  background: #F5F7FA;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
   border-radius: var(--radius-xl, 1rem);
-  border: 2px solid #0A1538;
+  border: 2px solid rgba(255, 255, 255, 0.3);
   margin-top: var(--spacing-lg, 4rem);
   position: relative;
   overflow: hidden;
@@ -177,20 +128,18 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at 30% 50%, rgba(10, 21, 56, 0.03) 0%, transparent 50%);
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
   pointer-events: none;
 }
 
 .use-cases-cta h3 {
   font-size: clamp(1.5rem, 3vw, 2rem);
-  color: #0A1538;
   margin-bottom: var(--spacing-sm, 1rem);
   font-weight: 700;
 }
 
 .use-cases-cta p {
   font-size: 1.125rem;
-  color: #555555;
   margin-bottom: var(--spacing-md, 2rem);
   max-width: 600px;
   margin-left: auto;
@@ -288,11 +237,6 @@
 
 /* Accessibility */
 @media (prefers-reduced-motion: reduce) {
-  .use-cases-section::before,
-  .use-cases-section::after {
-    animation: none;
-  }
-
   .use-case-card,
   .card-icon,
   .card-title {

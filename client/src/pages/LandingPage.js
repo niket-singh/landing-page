@@ -4,7 +4,7 @@ import HeroWhiteBlue from '../components/HeroWhiteBlue';
 import ServicesV2 from '../components/ServicesV2';
 import HowItWorksV2 from '../components/HowItWorksV2';
 import BenefitsV2 from '../components/BenefitsV2';
-import ExpertiseDeccan from '../components/ExpertiseDeccan';
+import Expertise from '../components/Expertise';
 import CollegeLogosSoulAI from '../components/CollegeLogosSoulAI';
 import FAQV2 from '../components/FAQV2';
 import Contact from '../components/Contact';
@@ -40,7 +40,7 @@ const LandingPage = () => {
 
       {/* 5. AI/ML Use Cases (Copied from Deccan AI) */}
       <div id="expertise">
-        <ExpertiseDeccan />
+        <Expertise />
       </div>
 
       {/* 6. Experts from Top Colleges (Copied from Soul AI) */}

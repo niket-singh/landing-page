@@ -12,6 +12,7 @@ import Contact from '../components/Contact';
 import useScrollAnimation from '../hooks/useScrollAnimation';
 import '../styles/theme.css';
 import '../styles/animations.css';
+import '../styles/sections.css';
 import '../styles/MASTER_THEME.css';
 
 const LandingPage = () => {
@@ -29,18 +30,18 @@ const LandingPage = () => {
       {/* 2. Stats Section - Animated Counters (Soul AI Style) */}
       <StatsSection />
 
-      {/* 3. Our Services */}
-      <div id="services">
+      {/* 3. Our Services - Blue Background */}
+      <div id="services" className="section-blue">
         <ServicesV2 />
       </div>
 
-      {/* 4. How to Join (Mapped to HowItWorks) */}
-      <div id="how-it-works">
+      {/* 4. How to Join (Mapped to HowItWorks) - White Background */}
+      <div id="how-it-works" className="section-white">
         <HowItWorksV2 />
       </div>
 
-      {/* 5. Why to Choose (Mapped to Benefits) */}
-      <div id="benefits">
+      {/* 5. Why to Choose (Mapped to Benefits) - Blue Background */}
+      <div id="benefits" className="section-blue">
         <BenefitsV2 />
       </div>
 
@@ -49,16 +50,18 @@ const LandingPage = () => {
         <UseCasesSection />
       </div>
 
-      {/* 7. Experts from Top Colleges (Soul AI) */}
-      <CollegeLogosSoulAI />
+      {/* 7. Experts from Top Colleges (Soul AI) - Blue Background */}
+      <div className="section-blue">
+        <CollegeLogosSoulAI />
+      </div>
 
-      {/* 8. FAQ Section */}
-      <div id="faq">
+      {/* 8. FAQ Section - White Background */}
+      <div id="faq" className="section-white">
         <FAQV2 />
       </div>
 
-      {/* 9. Contact */}
-      <div id="contact">
+      {/* 9. Contact - Blue Background */}
+      <div id="contact" className="section-blue">
         <Contact />
       </div>
 

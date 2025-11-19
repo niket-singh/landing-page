@@ -3,9 +3,9 @@
    ============================================ */
 
 :root {
-  --color-bg-hero-dark: #0B1B3F;
-  --color-bg-hero-gradient-start: #0B1B3F;
-  --color-bg-hero-gradient-end: #1747A0;
+  --color-bg-hero-dark: #0A1538;
+  --color-bg-hero-gradient-start: #0A1538;
+  --color-bg-hero-gradient-end: #1A2C5A;
 }
 
 .hero-dark {
@@ -30,7 +30,7 @@
   height: 140%;
   max-width: 1400px;
   max-height: 1400px;
-  background: radial-gradient(circle at center, var(--color-primary, #0A4DFF) 0%, #80B9FF 100%);
+  background: radial-gradient(circle at center, var(--color-primary, #0A1538) 0%, #1A2C5A 100%);
   border-radius: 50%;
   filter: blur(150px);
   transform: translateX(-50%) scale(1);
@@ -102,15 +102,15 @@
 }
 
 .hero-cta .button-primary {
-  background-color: var(--color-primary, #0A4DFF);
-  color: #fff;
-  box-shadow: 0 4px 14px rgba(10, 77, 255, 0.4);
+  background-color: #FFFFFF;
+  color: #0A1538;
+  box-shadow: 0 4px 14px rgba(255, 255, 255, 0.3);
 }
 
 .hero-cta .button-primary:hover {
-  background-color: #0039D9;
+  background-color: #F5F7FA;
   transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(10, 77, 255, 0.5);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.4);
 }
 
 .hero-cta .button-secondary {
@@ -122,7 +122,7 @@
 
 .hero-cta .button-secondary:hover {
   background: rgba(255, 255, 255, 1);
-  color: var(--color-primary-dark, #1E3A8A);
+  color: #0A1538;
   border-color: #fff;
   transform: translateY(-3px);
   box-shadow: 0 4px 14px rgba(255, 255, 255, 0.3);

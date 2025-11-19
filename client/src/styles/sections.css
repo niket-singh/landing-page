@@ -1,0 +1,96 @@
+/* ============================================
+   SECTION BACKGROUNDS - Zig-Zag Alternating
+   ============================================ */
+
+/* Blue Section - Dark Navy Background */
+.section-blue {
+  background: linear-gradient(135deg, #0A1538 0%, #1A2C5A 100%);
+  color: #FFFFFF;
+  position: relative;
+  overflow: hidden;
+}
+
+.section-blue h2,
+.section-blue h3,
+.section-blue h4 {
+  color: #FFFFFF;
+}
+
+.section-blue p {
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* White Section - Clean White Background */
+.section-white {
+  background: #FFFFFF;
+  color: #1B1F23;
+}
+
+.section-white h2,
+.section-white h3,
+.section-white h4 {
+  color: #0A1538;
+}
+
+.section-white p {
+  color: #555555;
+}
+
+/* Blob decorations for blue sections */
+.section-blue::before {
+  content: '';
+  position: absolute;
+  top: -10%;
+  right: -5%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle at center, rgba(26, 44, 90, 0.4) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: blobFloat 15s infinite alternate ease-in-out;
+  z-index: 0;
+}
+
+.section-blue::after {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: -5%;
+  width: 50%;
+  height: 50%;
+  background: radial-gradient(circle at center, rgba(26, 44, 90, 0.3) 0%, transparent 70%);
+  opacity: 0.6;
+  pointer-events: none;
+  border-radius: 50%;
+  filter: blur(80px);
+  animation: blobFloat 12s infinite alternate-reverse ease-in-out;
+  z-index: 0;
+}
+
+@keyframes blobFloat {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  50% {
+    transform: translate(20px, -20px) scale(1.1);
+  }
+  100% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+/* Ensure content is above blobs */
+.section-blue > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Accessibility - Reduced Motion */
+@media (prefers-reduced-motion: reduce) {
+  .section-blue::before,
+  .section-blue::after {
+    animation: none;
+  }
+}

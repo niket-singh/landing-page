@@ -1,0 +1,285 @@
+/* ============================================
+   USE CASES SECTION - Deccan AI Inspired
+   ============================================ */
+
+.use-cases-section {
+  padding: var(--spacing-xl, 6rem) 0;
+  background-color: var(--color-background-white, #FFFFFF);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Background Decoration */
+.use-cases-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: -10%;
+  width: 40%;
+  height: 100%;
+  background: radial-gradient(circle at center, var(--color-background-light, #F0F4FF) 0%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.use-cases-section::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 40%;
+  height: 100%;
+  background: radial-gradient(circle at center, var(--color-background-light, #F0F4FF) 0%, transparent 70%);
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+/* Section Header */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg, 4rem);
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  color: var(--color-primary-dark, #1E3A8A);
+  margin-bottom: var(--spacing-sm, 1rem);
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.section-subheading {
+  font-size: 1.125rem;
+  color: var(--color-text-light, #6B7280);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Use Cases Grid */
+.use-cases-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--spacing-md, 2rem);
+  margin-bottom: var(--spacing-lg, 4rem);
+  position: relative;
+  z-index: 1;
+}
+
+/* Individual Use Case Card */
+.use-case-card {
+  background: var(--color-background-white, #FFFFFF);
+  border: 1px solid #E5E7EB;
+  border-radius: var(--radius-lg, 0.75rem);
+  padding: var(--spacing-md, 2rem);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+/* Card hover effect */
+.use-case-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--color-primary, #0A4DFF) 0%, var(--color-primary-light, #80B9FF) 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+.use-case-card:hover::before {
+  opacity: 0.03;
+}
+
+.use-case-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(10, 77, 255, 0.12);
+  border-color: var(--color-primary-light, #80B9FF);
+}
+
+/* Card Icon */
+.card-icon {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-sm, 1rem);
+  display: inline-block;
+  transition: transform 0.3s ease;
+}
+
+.use-case-card:hover .card-icon {
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Card Title */
+.card-title {
+  font-size: 1.25rem;
+  color: var(--color-primary, #0A4DFF);
+  margin-bottom: var(--spacing-xs, 0.5rem);
+  font-weight: 700;
+  line-height: 1.3;
+  transition: color 0.3s ease;
+}
+
+.use-case-card:hover .card-title {
+  color: var(--color-primary-dark, #1E3A8A);
+}
+
+/* Card Description */
+.card-description {
+  font-size: 0.9375rem;
+  color: var(--color-text-medium, #555555);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* CTA Section */
+.use-cases-cta {
+  text-align: center;
+  padding: var(--spacing-lg, 4rem) var(--spacing-md, 2rem);
+  background: linear-gradient(135deg, var(--color-background-light, #F0F4FF) 0%, #FFFFFF 100%);
+  border-radius: var(--radius-xl, 1rem);
+  border: 2px solid var(--color-primary-light, #80B9FF);
+  margin-top: var(--spacing-lg, 4rem);
+  position: relative;
+  overflow: hidden;
+}
+
+.use-cases-cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 30% 50%, rgba(10, 77, 255, 0.05) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.use-cases-cta h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: var(--color-primary-dark, #1E3A8A);
+  margin-bottom: var(--spacing-sm, 1rem);
+  font-weight: 700;
+}
+
+.use-cases-cta p {
+  font-size: 1.125rem;
+  color: var(--color-text-medium, #555555);
+  margin-bottom: var(--spacing-md, 2rem);
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.use-cases-cta .button-primary {
+  position: relative;
+  z-index: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .use-cases-grid {
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: var(--spacing-sm, 1.5rem);
+  }
+}
+
+@media (max-width: 768px) {
+  .use-cases-section {
+    padding: var(--spacing-lg, 4rem) 0;
+  }
+
+  .section-header {
+    margin-bottom: var(--spacing-md, 2rem);
+  }
+
+  .use-cases-grid {
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: var(--spacing-sm, 1rem);
+  }
+
+  .use-case-card {
+    padding: var(--spacing-sm, 1.5rem);
+  }
+
+  .card-icon {
+    font-size: 2.5rem;
+  }
+
+  .card-title {
+    font-size: 1.125rem;
+  }
+
+  .card-description {
+    font-size: 0.875rem;
+  }
+
+  .use-cases-cta {
+    padding: var(--spacing-md, 2rem) var(--spacing-sm, 1rem);
+    margin-top: var(--spacing-md, 2rem);
+  }
+}
+
+@media (max-width: 480px) {
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .use-case-card {
+    padding: var(--spacing-sm, 1.25rem);
+  }
+}
+
+/* Animation for cards appearing */
+@keyframes cardAppear {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.use-case-card.in-view {
+  animation: cardAppear 0.5s ease-out forwards;
+}
+
+/* Stagger animation delays for cards */
+.use-case-card:nth-child(1) { animation-delay: 0.05s; }
+.use-case-card:nth-child(2) { animation-delay: 0.1s; }
+.use-case-card:nth-child(3) { animation-delay: 0.15s; }
+.use-case-card:nth-child(4) { animation-delay: 0.2s; }
+.use-case-card:nth-child(5) { animation-delay: 0.25s; }
+.use-case-card:nth-child(6) { animation-delay: 0.3s; }
+.use-case-card:nth-child(7) { animation-delay: 0.35s; }
+.use-case-card:nth-child(8) { animation-delay: 0.4s; }
+.use-case-card:nth-child(9) { animation-delay: 0.45s; }
+.use-case-card:nth-child(10) { animation-delay: 0.5s; }
+.use-case-card:nth-child(11) { animation-delay: 0.55s; }
+.use-case-card:nth-child(12) { animation-delay: 0.6s; }
+
+/* Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  .use-case-card,
+  .card-icon,
+  .card-title {
+    animation: none;
+    transition: none;
+  }
+
+  .use-case-card:hover {
+    transform: none;
+  }
+
+  .use-case-card:hover .card-icon {
+    transform: none;
+  }
+}

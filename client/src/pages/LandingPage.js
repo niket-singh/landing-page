@@ -1,57 +1,63 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import NavbarV2 from '../components/NavbarV2';
 import HeroWhiteBlue from '../components/HeroWhiteBlue';
+import StatsSection from '../components/StatsSection';
 import ServicesV2 from '../components/ServicesV2';
 import HowItWorksV2 from '../components/HowItWorksV2';
 import BenefitsV2 from '../components/BenefitsV2';
-import Expertise from '../components/Expertise';
+import UseCasesSection from '../components/UseCasesSection';
 import CollegeLogosSoulAI from '../components/CollegeLogosSoulAI';
 import FAQV2 from '../components/FAQV2';
 import Contact from '../components/Contact';
+import useScrollAnimation from '../hooks/useScrollAnimation';
+import '../styles/theme.css';
+import '../styles/animations.css';
 import '../styles/MASTER_THEME.css';
 
 const LandingPage = () => {
+  // Initialize scroll animations
+  useScrollAnimation();
+
   return (
     <div className="landing-page">
-      {/* Animated Background Blobs */}
-      <div className="bg-blob blob-1"></div>
-      <div className="bg-blob blob-2"></div>
-
       {/* Glass Navbar */}
       <NavbarV2 />
 
-      {/* 1. Hero Section (Clean, Blue, No Icon Boxes) */}
+      {/* 1. Hero Section with Animated Blobs */}
       <HeroWhiteBlue />
 
-      {/* 2. Our Services */}
+      {/* 2. Stats Section - Animated Counters (Soul AI Style) */}
+      <StatsSection />
+
+      {/* 3. Our Services */}
       <div id="services">
         <ServicesV2 />
       </div>
 
-      {/* 3. How to Join (Mapped to HowItWorks) */}
+      {/* 4. How to Join (Mapped to HowItWorks) */}
       <div id="how-it-works">
         <HowItWorksV2 />
       </div>
 
-      {/* 4. Why to Choose (Mapped to Benefits) */}
+      {/* 5. Why to Choose (Mapped to Benefits) */}
       <div id="benefits">
         <BenefitsV2 />
       </div>
 
-      {/* 5. AI/ML Use Cases (Copied from Deccan AI) */}
+      {/* 6. Deep Expertise in AI/ML Use Cases (Deccan AI Inspired) */}
       <div id="expertise">
-        <Expertise />
+        <UseCasesSection />
       </div>
 
-      {/* 6. Experts from Top Colleges (Copied from Soul AI) */}
+      {/* 7. Experts from Top Colleges (Soul AI) */}
       <CollegeLogosSoulAI />
 
-      {/* 7. FAQ Section */}
+      {/* 8. FAQ Section */}
       <div id="faq">
         <FAQV2 />
       </div>
 
-      {/* 8. Contact */}
+      {/* 9. Contact */}
       <div id="contact">
         <Contact />
       </div>

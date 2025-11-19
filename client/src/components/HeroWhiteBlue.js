@@ -15,6 +15,10 @@ const HeroWhiteBlue = () => {
 
   return (
     <section className="hero-section">
+      {/* Animated Background Blobs */}
+      <div className="hero-blob hero-blob-1"></div>
+      <div className="hero-blob hero-blob-2"></div>
+
       <div className="container-v2">
         <div className="hero-container">
           

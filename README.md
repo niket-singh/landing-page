@@ -111,6 +111,26 @@ landing-page/
 
 ## 📦 Installation & Setup
 
+### Quick Setup (Recommended)
+
+Use the automated setup script for the fastest setup:
+
+```bash
+git clone https://github.com/niket-singh/landing-page.git
+cd landing-page
+./setup.sh
+```
+
+The script will:
+- ✅ Check Node.js and MongoDB installation
+- ✅ Create `.env` files from examples
+- ✅ Install all dependencies (server + client)
+- ✅ Provide clear next steps
+
+### Manual Setup
+
+If you prefer manual setup:
+
 ### 1. Clone the Repository
 
 ```bash

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
-import './Contact.css';
+import '../styles/MASTER_THEME.css';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -54,136 +54,135 @@ const Contact = () => {
     }
   };
 
-  return (
-    <section id="contact" className="contact">
-      <div className="container">
-        <div className="contact-wrapper">
-          <div className="contact-info">
-            <h2>Let's Build Together</h2>
-            <p>Whether you're looking for elite talent or enterprise AI solutions, we're here to help.</p>
+  const inputStyle = {
+    padding: '16px',
+    borderRadius: '12px',
+    border: '1px solid var(--blue-200)',
+    background: 'rgba(255,255,255,0.8)',
+    fontSize: '1rem',
+    outline: 'none',
+    fontFamily: 'inherit'
+  };
 
-            <div className="contact-features">
-              <div className="contact-feature">
-                <div className="feature-icon-small">⚡</div>
-                <div>
-                  <h4>Quick Response</h4>
-                  <p>We'll get back to you within 24 hours</p>
-                </div>
+  return (
+    <section className="section-white" style={{ background: 'linear-gradient(180deg, var(--white) 0%, var(--blue-50) 100%)' }}>
+      <div className="container-v2">
+        <div className="glass-card" style={{ maxWidth: '1000px', margin: '0 auto', padding: '3rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '4rem' }}>
+
+          {/* Left Info */}
+          <div>
+            <div className="section-badge">Get in Touch</div>
+            <h2 className="section-title" style={{ fontSize: '2.5rem' }}>Ready to Scale <br /><span className="gradient-text-blue">Your AI?</span></h2>
+            <p style={{ color: 'var(--text-secondary)', fontSize: '1.1rem', marginBottom: '2rem' }}>
+              Schedule a call with our solutions architect to discuss your data and talent needs.
+            </p>
+            <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem' }}>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--blue-100)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>✉️</div>
+                <span style={{ fontWeight: '500' }}>contact@adzzat.com</span>
               </div>
-              <div className="contact-feature">
-                <div className="feature-icon-small">🤝</div>
-                <div>
-                  <h4>Personalized Solutions</h4>
-                  <p>Tailored to your specific needs</p>
-                </div>
-              </div>
-              <div className="contact-feature">
-                <div className="feature-icon-small">💼</div>
-                <div>
-                  <h4>Enterprise Ready</h4>
-                  <p>Scalable solutions for any size</p>
-                </div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: 'var(--blue-100)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>📍</div>
+                <span style={{ fontWeight: '500' }}>Bangalore, India</span>
               </div>
             </div>
           </div>
 
-          <div className="contact-form-container">
-            {submitStatus === 'success' ? (
-              <div className="form-success">
-                <div className="success-icon">✓</div>
-                <h3>Message Sent!</h3>
-                <p>We'll get back to you shortly.</p>
-              </div>
-            ) : (
-              <form onSubmit={handleSubmit} className="contact-form">
-                <div className="form-group">
-                  <label htmlFor="name">Full Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    placeholder="John Doe"
-                    value={formData.name}
-                    onChange={handleChange}
-                  />
+          {/* Right Form */}
+          {submitStatus === 'success' ? (
+            <div style={{ textAlign: 'center', padding: '3rem 1rem' }}>
+              <div style={{
+                width: '80px',
+                height: '80px',
+                borderRadius: '50%',
+                background: 'linear-gradient(135deg, #10b981 0%, #34d399 100%)',
+                color: 'white',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                fontSize: '3rem',
+                margin: '0 auto 1.5rem'
+              }}>✓</div>
+              <h3 style={{ fontSize: '1.75rem', fontWeight: '800', marginBottom: '0.5rem' }}>Message Sent!</h3>
+              <p style={{ color: 'var(--text-secondary)' }}>We'll get back to you shortly.</p>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+              <input
+                type="text"
+                name="name"
+                placeholder="Full Name"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                style={inputStyle}
+              />
+              <input
+                type="email"
+                name="email"
+                placeholder="Work Email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                style={inputStyle}
+              />
+              <input
+                type="text"
+                name="company"
+                placeholder="Company Name"
+                value={formData.company}
+                onChange={handleChange}
+                style={inputStyle}
+              />
+              <select
+                name="interest"
+                required
+                value={formData.interest}
+                onChange={handleChange}
+                style={inputStyle}
+              >
+                <option value="">I am looking to...</option>
+                <option value="talent">Hire Talent</option>
+                <option value="llm-eval">LLM Evaluation Services</option>
+                <option value="dataset">Dataset Creation</option>
+                <option value="joining">Join as Talent</option>
+                <option value="other">Other</option>
+              </select>
+              <textarea
+                name="message"
+                placeholder="Tell us about your project"
+                rows="4"
+                required
+                value={formData.message}
+                onChange={handleChange}
+                style={{...inputStyle, resize: 'vertical'}}
+              ></textarea>
+
+              {submitStatus === 'error' && (
+                <div style={{
+                  padding: '1rem',
+                  background: 'rgba(239, 68, 68, 0.1)',
+                  border: '1px solid rgba(239, 68, 68, 0.3)',
+                  borderRadius: '12px',
+                  color: '#dc2626',
+                  fontSize: '0.875rem',
+                  fontWeight: '600',
+                  textAlign: 'center'
+                }}>
+                  An error occurred. Please try again.
                 </div>
+              )}
 
-                <div className="form-group">
-                  <label htmlFor="email">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    placeholder="john@company.com"
-                    value={formData.email}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="company">Company Name</label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    placeholder="Your Company"
-                    value={formData.company}
-                    onChange={handleChange}
-                  />
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="interest">I'm Interested In</label>
-                  <select
-                    id="interest"
-                    name="interest"
-                    required
-                    value={formData.interest}
-                    onChange={handleChange}
-                  >
-                    <option value="">Select an option</option>
-                    <option value="talent">Hiring Talent</option>
-                    <option value="llm-eval">LLM Evaluation Services</option>
-                    <option value="dataset">Dataset Creation</option>
-                    <option value="joining">Joining as Talent</option>
-                    <option value="other">Other</option>
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="message">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    rows="4"
-                    required
-                    placeholder="Tell us about your project or requirements..."
-                    value={formData.message}
-                    onChange={handleChange}
-                  ></textarea>
-                </div>
-
-                {submitStatus === 'error' && (
-                  <div className="form-error">
-                    An error occurred. Please try again.
-                  </div>
-                )}
-
-                <button
-                  type="submit"
-                  className="btn-primary btn-large btn-block"
-                  disabled={isSubmitting}
-                >
-                  <span>{isSubmitting ? 'Sending...' : 'Send Message'}</span>
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                    <path d="M18 2L9 11M18 2L12 18L9 11M18 2L2 8L9 11" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  </svg>
-                </button>
-              </form>
-            )}
-          </div>
+              <button
+                type="submit"
+                className="btn-premium-blue"
+                style={{ marginTop: '1rem', width: '100%' }}
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? 'Sending...' : 'Send Message'}
+              </button>
+            </form>
+          )}
         </div>
       </div>
     </section>
